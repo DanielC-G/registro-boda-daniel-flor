@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Registro boda Daniel y Flor</title>
+  <meta
+    name="description"
+    content="Registro boda Daniel y Flor: confirma tu asistencia y consulta los detalles de ceremonia y recepción en Coatepec, Veracruz."
+  />
+
+  <style>
+    :root{
+      --bg: #FFFFFF;
+      --text: #1F1F1F;
+      --muted: #6B6B6B;
+      --panel: #F3F3F3;
+      --gold: #C8A24A;
+
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.06);
+      --max: 980px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible{
+      outline: 3px solid rgba(200,162,74,.35);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 44px;
+    }
+
+    header{
+      padding-top: 18px;
+      padding-bottom: 26px;
+      text-align: center;
+    }
+
+    .brandline{
+      width: min(120px, 28vw);
+      height: 1px;
+      margin: 18px auto;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    h1{
+      margin: 0 0 10px 0;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      font-weight: 600;
+      letter-spacing: .2px;
+      font-size: clamp(26px, 4.7vw, 40px);
+      line-height: 1.2;
+    }
+
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(14px, 2.6vw, 18px);
+      letter-spacing: .2px;
+    }
+
+    .actions{
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      letter-spacing: .2px;
+      min-height: 44px;
+      transition: transform .06s ease, box-shadow .16s ease, background .16s ease, border-color .16s ease;
+      user-select: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn:active{ transform: translateY(1px); }
+
+    .btn-primary{
+      background: var(--gold);
+      color: #111;
+      box-shadow: 0 10px 20px rgba(200,162,74,.28);
+    }
+    .btn-primary:hover{
+      box-shadow: 0 14px 26px rgba(200,162,74,.34);
+    }
+
+    .btn-secondary{
+      background: transparent;
+      border-color: rgba(31,31,31,.18);
+      color: var(--text);
+    }
+    .btn-secondary:hover{
+      border-color: rgba(200,162,74,.7);
+      box-shadow: 0 10px 20px rgba(0,0,0,.05);
+    }
+
+    .section{
+      padding: 22px 0;
+    }
+
+    .divider{
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent, rgba(200,162,74,.9), transparent);
+      opacity: .8;
+      margin: 6px 0 22px;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card{
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(31,31,31,.06);
+    }
+
+    h2{
+      margin: 0 0 6px 0;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      font-weight: 600;
+      letter-spacing: .2px;
+      font-size: clamp(18px, 3.4vw, 24px);
+    }
+
+    .lead{
+      margin: 0 0 10px 0;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .note{
+      margin: 0 0 14px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .kv{
+      margin: 10px 0 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+    .kv li{
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+    .k{
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .15px;
+      text-transform: uppercase;
+    }
+    .v{
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    /* Responsive iframe container */
+    .iframe-shell{
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(31,31,31,.10);
+    }
+    iframe{
+      width: 100%;
+      height: 900px; /* Ajusta si tu Google Form es más largo/corto */
+      border: 0;
+      display: block;
+    }
+
+    footer{
+      padding: 18px 0 8px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Larger screens */
+    @media (min-width: 820px){
+      .wrap{ padding: 44px 22px 60px; }
+      .grid.two{
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .card{ padding: 22px; }
+      .kv li{ grid-template-columns: 110px 1fr; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      .btn{ transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- HERO -->
+    <header>
+      <div class="brandline" aria-hidden="true"></div>
+      <h1>Daniel Cerqueda García &amp; Flor Esperanza Hernández Martínez</h1>
+      <p class="subtitle">30 de mayo de 2026 | Coatepec, Veracruz</p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#registro">Registrar asistencia</a>
+      </div>
+
+      <div class="brandline" aria-hidden="true"></div>
+    </header>
+
+    <!-- REGISTRO -->
+    <section id="registro" class="section" aria-label="Registro">
+      <div class="divider" aria-hidden="true"></div>
+      <div class="card">
+        <h2>Registro</h2>
+        <p class="lead">Para una mejor organización, confirma tu asistencia mediante el siguiente formulario.</p>
+        <p class="note">La información se utilizará únicamente para la organización del evento.</p>
+
+        <div class="iframe-shell" role="group" aria-label="Formulario de registro">
+          <!-- Reemplaza FORM_EMBED_URL por la URL de inserción de Google Forms -->
+          <iframe
+            src="FORM_EMBED_URL"
+            loading="lazy"
+            title="Formulario de registro de invitados"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETALLES -->
+    <section class="section" aria-label="Detalles del evento">
+      <div class="divider" aria-hidden="true"></div>
+
+      <div class="grid two">
+        <!-- CEREMONIA -->
+        <div class="card">
+          <h2>Ceremonia religiosa</h2>
+          <ul class="kv" aria-label="Datos de la ceremonia">
+            <li><span class="k">Fecha</span><span class="v">30 de mayo de 2026</span></li>
+            <li><span class="k">Hora</span><span class="v">12:00 h</span></li>
+            <li><span class="k">Lugar</span><span class="v">Iglesia de la Virgen de Guadalupe</span></li>
+            <li><span class="k">Dirección</span><span class="v">5a Aldama, Centro, C.P. 91500, Coatepec, Veracruz</span></li>
+          </ul>
+
+          <div class="actions" style="justify-content:flex-start; margin-top:16px;">
+            <a
+              class="btn btn-secondary"
+              href="https://www.google.com/maps/search/?api=1&query=5a%20Aldama%2C%20Centro%2C%20C.P.%2091500%2C%20Coatepec%2C%20Veracruz%2C%20Iglesia%20de%20la%20Virgen%20de%20Guadalupe"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir en Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- RECEPCIÓN -->
+        <div class="card">
+          <h2>Recepción</h2>
+          <ul class="kv" aria-label="Datos de la recepción">
+            <li><span class="k">Hora</span><span class="v">Al término de la ceremonia</span></li>
+            <li><span class="k">Lugar</span><span class="v">Salón Campestre Los Encinos</span></li>
+            <li><span class="k">Dirección</span><span class="v">Camino a Micoxtla, pasando el panteón, Centro, C.P. 91240, Xico, Veracruz</span></li>
+          </ul>
+
+          <div class="actions" style="justify-content:flex-start; margin-top:16px;">
+            <a
+              class="btn btn-secondary"
+              href="https://www.google.com/maps/search/?api=1&query=Sal%C3%B3n%20Campestre%20Los%20Encinos%2C%20Camino%20a%20Micoxtla%2C%20pasando%20el%20pante%C3%B3n%2C%20Centro%2C%20C.P.%2091240%2C%20Xico%2C%20Veracruz"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir en Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="divider" aria-hidden="true"></div>
+      Gracias por acompañarnos.
+    </footer>
+  </div>
+</body>
+</html>
