@@ -17,10 +17,10 @@
 
     <!-- Estilo de pétalos -->
     <style>
-      .petal { fill: #FFFFFF; stroke: #E6E6E6; stroke-width: 2; }
-      .petal2 { fill: #FFFFFF; stroke: #DCDCDC; stroke-width: 2; opacity: 0.95; }
-      .center { fill: #F7F7F7; stroke: #E3E3E3; stroke-width: 2; }
-      .accent { fill: none; stroke: #F0F0F0; stroke-width: 2; opacity: 0.9; }
+      .petal { fill: #FFFFFF; stroke: url(#gold); stroke-width: 2.4; }
+      .petal2 { fill: #FFFFFF; stroke: url(#gold); stroke-width: 2; opacity: 0.95; }
+      .center { fill: #FDFDFD; stroke: url(#gold); stroke-width: 2.2; }
+      .accent { fill: none; stroke: #E6D7A8; stroke-width: 2; opacity: 0.9; }
     </style>
 
     <!-- Rosa estilizada -->
@@ -43,6 +43,19 @@
       <circle class="center" cx="0" cy="0" r="14"/>
       <path class="accent" d="M -8 -2 C -2 -10, 8 -8, 6 0 C 4 10, -6 10, -8 2"/>
     </g>
+
+    <!-- Ramo denso para llenar las esquinas -->
+    <g id="rose-cluster">
+      <use href="#rose" x="0" y="0"/>
+      <use href="#rose" x="90" y="6" transform="scale(0.9) rotate(12 90 6)"/>
+      <use href="#rose" x="180" y="0" transform="scale(0.85) rotate(-10 180 0)"/>
+      <use href="#rose" x="20" y="92" transform="scale(0.86) rotate(-8 20 92)"/>
+      <use href="#rose" x="110" y="98" transform="scale(0.8) rotate(16 110 98)"/>
+      <use href="#rose" x="200" y="88" transform="scale(0.75) rotate(-12 200 88)"/>
+      <use href="#rose" x="0" y="180" transform="scale(0.78) rotate(10 0 180)"/>
+      <use href="#rose" x="90" y="186" transform="scale(0.72) rotate(-6 90 186)"/>
+      <use href="#rose" x="180" y="176" transform="scale(0.68) rotate(14 180 176)"/>
+    </g>
   </defs>
 
   <!-- Marco dorado -->
@@ -51,40 +64,24 @@
 
   <!-- Esquinas -->
   <g transform="translate(90 90) scale(1)">
-    <use href="#rose" x="0" y="0"/><use xlink:href="#rose" x="0" y="0"/>
-    <use href="#rose" x="78" y="24" transform="scale(0.78) rotate(18 78 24)"/>
-    <use xlink:href="#rose" x="78" y="24" transform="scale(0.78) rotate(18 78 24)"/>
-    <use href="#rose" x="28" y="84" transform="scale(0.70) rotate(-12 28 84)"/>
-    <use xlink:href="#rose" x="28" y="84" transform="scale(0.70) rotate(-12 28 84)"/>
+    <use href="#rose-cluster"/>
   </g>
 
   <g transform="translate(1510 90) scale(1)">
     <g transform="scale(-1 1)">
-      <use href="#rose" x="0" y="0"/><use xlink:href="#rose" x="0" y="0"/>
-      <use href="#rose" x="78" y="24" transform="scale(0.78) rotate(18 78 24)"/>
-      <use xlink:href="#rose" x="78" y="24" transform="scale(0.78) rotate(18 78 24)"/>
-      <use href="#rose" x="28" y="84" transform="scale(0.70) rotate(-12 28 84)"/>
-      <use xlink:href="#rose" x="28" y="84" transform="scale(0.70) rotate(-12 28 84)"/>
+      <use href="#rose-cluster"/>
     </g>
   </g>
 
   <g transform="translate(90 810) scale(1)">
     <g transform="scale(1 -1)">
-      <use href="#rose" x="0" y="0"/><use xlink:href="#rose" x="0" y="0"/>
-      <use href="#rose" x="78" y="24" transform="scale(0.78) rotate(18 78 24)"/>
-      <use xlink:href="#rose" x="78" y="24" transform="scale(0.78) rotate(18 78 24)"/>
-      <use href="#rose" x="28" y="84" transform="scale(0.70) rotate(-12 28 84)"/>
-      <use xlink:href="#rose" x="28" y="84" transform="scale(0.70) rotate(-12 28 84)"/>
+      <use href="#rose-cluster"/>
     </g>
   </g>
 
   <g transform="translate(1510 810) scale(1)">
     <g transform="scale(-1 -1)">
-      <use href="#rose" x="0" y="0"/><use xlink:href="#rose" x="0" y="0"/>
-      <use href="#rose" x="78" y="24" transform="scale(0.78) rotate(18 78 24)"/>
-      <use xlink:href="#rose" x="78" y="24" transform="scale(0.78) rotate(18 78 24)"/>
-      <use href="#rose" x="28" y="84" transform="scale(0.70) rotate(-12 28 84)"/>
-      <use xlink:href="#rose" x="28" y="84" transform="scale(0.70) rotate(-12 28 84)"/>
+      <use href="#rose-cluster"/>
     </g>
   </g>
 </svg>
