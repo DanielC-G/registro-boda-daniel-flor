@@ -6,24 +6,18 @@
   <title>Daniel & Flor | Invitación</title>
   <meta name="description" content="Invitación digital. Toca para abrir el sobre y ver los detalles. Incluye enlace al registro de invitados." />
 
-  <!-- URL base de ESTA invitación -->
   <link rel="canonical" href="https://danielc-g.github.io/registro-boda-daniel-flor/invitation/" />
 
-  <!-- Open Graph (previsualización al compartir el link desde WhatsApp/Messenger, aunque NO lo muestres en la UI) -->
+  <!-- Open Graph (para vista previa al compartir el link; no añade botones en tu UI) -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_MX" />
   <meta property="og:title" content="Daniel & Flor | Invitación" />
-  <meta property="og:description" content="Invitación digital. Toca para abrir el sobre y ver los detalles. Registro incluido." />
+  <meta property="og:description" content="Toca para abrir el sobre y ver los detalles. Registro incluido." />
   <meta property="og:url" content="https://danielc-g.github.io/registro-boda-daniel-flor/invitation/" />
-  <!-- Sube invitation/preview.jpg (recomendado 1200x630) -->
   <meta property="og:image" content="https://danielc-g.github.io/registro-boda-daniel-flor/invitation/preview.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Daniel & Flor | Invitación" />
-  <meta name="twitter:description" content="Invitación digital. Toca para abrir el sobre y ver los detalles. Registro incluido." />
-  <meta name="twitter:image" content="https://danielc-g.github.io/registro-boda-daniel-flor/invitation/preview.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,113 +28,97 @@
       --bg:#FFFFFF;
       --text:#1F1F1F;
       --muted:#6B6B6B;
+      --soft:#F3F3F3;
       --gold:#C8A24A;
 
+      --env:#F7F5F0;
+      --env2:#EFEAE0;
       --paper:#FFFFFF;
-      --env:#F7F5F0;       /* cuerpo del sobre */
-      --env-2:#EFEAE0;     /* solapa/sombra */
-      --stroke:rgba(31,31,31,.10);
-      --shadow: 0 24px 60px rgba(31,31,31,.12);
-      --shadow2: 0 10px 24px rgba(31,31,31,.10);
+      --stroke: rgba(31,31,31,.12);
+
+      --shadow: 0 18px 50px rgba(31,31,31,.10);
+      --shadow2: 0 10px 26px rgba(31,31,31,.10);
 
       --radius: 18px;
     }
 
     *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+    html, body{ height:100%; }
     body{
       margin:0;
+      color:var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.45;
       background:
         radial-gradient(1200px 600px at 50% -10%, rgba(200,162,74,.14), transparent 60%),
         radial-gradient(1000px 700px at 10% 110%, rgba(31,31,31,.05), transparent 55%),
         var(--bg);
-      color:var(--text);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height:1.45;
     }
 
     .wrap{
       min-height:100%;
       display:flex;
-      flex-direction:column;
+      align-items:center;
       justify-content:center;
-      padding: 28px 16px 40px;
+      padding: 28px 16px 42px;
     }
 
     .container{
-      width:min(980px, 100%);
-      margin:0 auto;
+      width:min(900px, 100%);
     }
 
     header{
       text-align:center;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
-
     .kicker{
       color:var(--muted);
       letter-spacing:.08em;
       text-transform:uppercase;
-      font-size: 12px;
-      margin: 0 0 8px;
+      font-size:12px;
+      margin:0 0 8px;
     }
-
     h1{
       margin:0 0 10px;
-      font-family: "Playfair Display", Georgia, serif;
-      font-weight: 600;
+      font-family:"Playfair Display", Georgia, serif;
+      font-weight:600;
       font-size: clamp(30px, 4vw, 44px);
-      letter-spacing:.01em;
     }
-
     .sub{
       margin:0 auto;
       color:var(--muted);
-      max-width: 54ch;
+      max-width: 60ch;
       font-size: 15px;
     }
 
-    .stage{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      align-items:start;
-      margin-top: 22px;
-    }
-
-    @media (min-width: 920px){
-      .stage{ grid-template-columns: 1.05fr .95fr; gap: 28px; }
-    }
-
     .card{
-      background: rgba(255,255,255,.72);
+      background: rgba(255,255,255,.78);
       border: 1px solid var(--stroke);
       border-radius: var(--radius);
       box-shadow: var(--shadow2);
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(7px);
       padding: 16px;
     }
 
-    .card h2{
-      font-family: "Playfair Display", Georgia, serif;
-      font-weight: 600;
-      font-size: 18px;
-      margin: 0 0 8px;
-    }
-
-    .muted{ color: var(--muted); }
-
-    .actions{
+    .cardhead{
       display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      margin-top: 12px;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 12px;
     }
+    .cardhead h2{
+      margin:0;
+      font-family:"Playfair Display", Georgia, serif;
+      font-weight:600;
+      font-size: 18px;
+    }
+    .muted{ color:var(--muted); }
 
     .btn{
       appearance:none;
       border: 1px solid var(--stroke);
-      background: #fff;
+      background:#fff;
       color: var(--text);
       padding: 10px 12px;
       border-radius: 999px;
@@ -152,61 +130,44 @@
       display:inline-flex;
       align-items:center;
       gap: 8px;
+      white-space: nowrap;
+      touch-action: manipulation;
     }
-
     .btn:hover{ box-shadow: 0 10px 24px rgba(31,31,31,.10); border-color: rgba(200,162,74,.35); }
     .btn:active{ transform: translateY(1px); }
-
     .btn.primary{
-      background: linear-gradient(180deg, rgba(200,162,74,.22), rgba(200,162,74,.12));
-      border-color: rgba(200,162,74,.45);
-    }
-
-    .btn.goldline{
+      background: linear-gradient(180deg, rgba(200,162,74,.24), rgba(200,162,74,.10));
       border-color: rgba(200,162,74,.55);
     }
 
-    .pill{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(200,162,74,.10);
-      border: 1px solid rgba(200,162,74,.25);
-      color: var(--text);
-      font-size: 13px;
-      margin-top: 10px;
-    }
-
-    /* --- Sobre --- */
-    .envelope-wrap{
+    /* ---------- Envelope (responsive via clip-path polygons) ---------- */
+    .stage{
       display:flex;
       justify-content:center;
-      padding: 8px 6px;
+      padding: 6px 6px 2px;
     }
 
-    .envelope{
-      width: min(520px, 100%);
-      position:relative;
-      border-radius: var(--radius);
-      padding: 18px 18px 22px;
-      background: transparent;
-    }
-
-    .envelope-shell{
-      position:relative;
-      width:100%;
-      height: 320px;
-      border-radius: 22px;
-      background: transparent;
+    .env{
+      width: min(560px, 100%);
+      aspect-ratio: 16 / 11;
+      position: relative;
       perspective: 1200px;
+      border-radius: 22px;
+      user-select:none;
       outline: none;
     }
 
-    .env-body{
+    /* Click surface */
+    .env-hit{
       position:absolute;
-      inset: 38px 0 0 0;
+      inset:0;
+      border-radius: 22px;
+      cursor:pointer;
+    }
+
+    .env-base{
+      position:absolute;
+      inset: 14% 0 0 0;
       border-radius: 20px;
       background: var(--env);
       border: 1px solid var(--stroke);
@@ -214,158 +175,162 @@
       overflow:hidden;
     }
 
-    .env-bottom{
+    /* Back panel (for depth) */
+    .env-back{
       position:absolute;
-      inset:auto 0 0 0;
-      height: 60%;
-      background: linear-gradient(180deg, rgba(0,0,0,0), rgba(31,31,31,.03));
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0)),
+        var(--env);
+    }
+
+    /* Left & right folds using clip-path; these are percentage-based => responsive */
+    .fold-left, .fold-right{
+      position:absolute;
+      inset:0;
+      background: var(--env2);
+      opacity:.95;
+    }
+    .fold-left{
+      clip-path: polygon(0% 100%, 0% 35%, 50% 70%);
+    }
+    .fold-right{
+      clip-path: polygon(100% 100%, 100% 35%, 50% 70%);
+    }
+
+    /* Bottom fold */
+    .fold-bottom{
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0), rgba(31,31,31,.04));
+      clip-path: polygon(0% 100%, 50% 70%, 100% 100%, 0% 100%);
       pointer-events:none;
     }
 
-    .env-left, .env-right{
+    /* Flap (top) */
+    .flap{
       position:absolute;
-      bottom:0;
-      width:0; height:0;
-      border-style: solid;
-      opacity:.95;
-    }
-
-    .env-left{
-      left:0;
-      border-width: 140px 0 0 260px;
-      border-color: transparent transparent transparent var(--env-2);
-    }
-
-    .env-right{
-      right:0;
-      border-width: 140px 260px 0 0;
-      border-color: transparent var(--env-2) transparent transparent;
-    }
-
-    .env-flap{
-      position:absolute;
-      top: 38px;
       left:0; right:0;
-      height: 160px;
-      transform-origin: top center;
+      top: 14%;
+      height: 45%;
+      transform-origin: 50% 0%;
       transform: rotateX(0deg);
       transition: transform .75s cubic-bezier(.2,.8,.2,1);
       z-index: 4;
+      filter: drop-shadow(0 10px 18px rgba(31,31,31,.10));
     }
-
-    .env-flap::before{
+    .flap::before{
       content:"";
       position:absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width:0; height:0;
-      border-style: solid;
-      border-width: 0 260px 160px 260px;
-      border-color: transparent transparent var(--env-2) transparent;
-      filter: drop-shadow(0 10px 20px rgba(31,31,31,.10));
+      inset:0;
+      background: var(--env2);
+      clip-path: polygon(0% 0%, 100% 0%, 50% 72%);
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      border: 1px solid rgba(31,31,31,.06);
+      border-bottom: none;
     }
 
+    /* Letter */
     .letter{
       position:absolute;
       left: 50%;
-      transform: translateX(-50%);
-      bottom: 22px;
-      width: calc(100% - 46px);
-      height: 260px;
-      border-radius: 16px;
+      transform: translateX(-50%) translateY(18%);
+      bottom: 7%;
+      width: 88%;
+      height: 68%;
       background: var(--paper);
       border: 1px solid var(--stroke);
-      box-shadow: 0 12px 30px rgba(31,31,31,.10);
-      padding: 18px 18px 16px;
-      z-index: 2;
-      transition: transform .75s cubic-bezier(.2,.8,.2,1), height .75s cubic-bezier(.2,.8,.2,1);
-      transform: translateX(-50%) translateY(90px);
-      overflow:hidden;
+      border-radius: 16px;
+      box-shadow: 0 12px 26px rgba(31,31,31,.10);
+      z-index: 3;
+      overflow:hidden;  /* keeps everything inside */
+      transition: transform .75s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .letter-inner{
+      height:100%;
+      padding: 16px 16px 14px;
+      overflow:auto; /* if content grows, scroll inside letter instead of breaking layout */
     }
 
     .seal{
       position:absolute;
-      top: 12px;
-      right: 12px;
-      width: 44px;
-      height: 44px;
+      top: 10px;
+      right: 10px;
+      width: 42px;
+      height: 42px;
       border-radius: 999px;
-      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.70), rgba(255,255,255,0) 55%),
-                  rgba(200,162,74,.26);
-      border: 1px solid rgba(200,162,74,.55);
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,.75), rgba(255,255,255,0) 55%),
+        rgba(200,162,74,.26);
+      border: 1px solid rgba(200,162,74,.60);
       display:flex;
       align-items:center;
       justify-content:center;
-      color: var(--text);
+      font-family:"Playfair Display", Georgia, serif;
       font-weight: 700;
       letter-spacing:.02em;
-      font-family: "Playfair Display", Georgia, serif;
-      user-select:none;
     }
 
     .letter h3{
       margin: 0 0 6px;
-      font-family: "Playfair Display", Georgia, serif;
+      font-family:"Playfair Display", Georgia, serif;
       font-size: 22px;
-      letter-spacing:.01em;
+      font-weight: 600;
+      padding-right: 52px; /* keep away from seal */
     }
-
-    .letter .meta{
+    .meta{
+      margin: 0 0 10px;
       color: var(--muted);
       font-size: 14px;
-      margin: 0 0 10px;
     }
 
-    .letter .grid{
+    .grid{
       display:grid;
       grid-template-columns: 1fr;
       gap: 10px;
       margin-top: 10px;
     }
-
-    @media (min-width: 520px){
-      .letter .grid{ grid-template-columns: 1fr 1fr; }
+    @media (min-width: 560px){
+      .grid{ grid-template-columns: 1fr 1fr; }
     }
 
     .mini{
       background: rgba(31,31,31,.03);
       border: 1px solid var(--stroke);
       border-radius: 14px;
-      padding: 10px 10px;
+      padding: 10px;
     }
-
     .mini strong{
       display:block;
       font-size: 13px;
       margin-bottom: 4px;
       letter-spacing:.02em;
     }
-
     .mini a{
       color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(200,162,74,.55);
+      text-decoration:none;
+      border-bottom: 1px solid rgba(200,162,74,.60);
     }
     .mini a:hover{ border-bottom-color: rgba(200,162,74,1); }
 
-    .open .env-flap{ transform: rotateX(-165deg); }
-    .open .letter{
-      transform: translateX(-50%) translateY(0px);
-      height: 292px;
+    .cta-row{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      justify-content:flex-start;
     }
 
-    .tap-hint{
-      position:absolute;
-      inset: 0;
+    .hint{
+      margin-top: 12px;
       display:flex;
-      align-items:flex-end;
       justify-content:center;
-      padding-bottom: 10px;
-      z-index: 5;
       pointer-events:none;
     }
-
-    .tap-hint span{
+    .hint span{
       font-size: 13px;
       color: var(--muted);
       background: rgba(255,255,255,.70);
@@ -375,15 +340,25 @@
       backdrop-filter: blur(6px);
     }
 
+    /* OPEN STATE */
+    .env.is-open .flap{
+      transform: rotateX(-165deg);
+    }
+    .env.is-open .letter{
+      transform: translateX(-50%) translateY(-6%);
+    }
+
+    /* Footer */
     footer{
       text-align:center;
-      margin-top: 18px;
+      margin-top: 14px;
       color: var(--muted);
       font-size: 12px;
     }
 
+    /* Reduce motion */
     @media (prefers-reduced-motion: reduce){
-      .env-flap, .letter, .btn { transition: none !important; }
+      .flap, .letter, .btn { transition: none !important; }
     }
 
     :focus-visible{
@@ -391,8 +366,6 @@
       outline-offset: 2px;
       border-radius: 12px;
     }
-
-    code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
   </style>
 </head>
 
@@ -403,126 +376,116 @@
         <p class="kicker">Invitación digital</p>
         <h1>Daniel &amp; Flor</h1>
         <p class="sub">
-          Toca para abrir el sobre. Encontrarás la información del evento y el enlace al registro de invitados.
+          Toca el sobre para abrirlo. La confirmación se realiza únicamente en el registro.
         </p>
       </header>
 
-      <div class="stage">
-        <!-- Sobre -->
-        <section class="card">
-          <h2>Sobre</h2>
-          <p class="muted" style="margin:0 0 10px;">
-            Abre el sobre para ver los detalles. Para confirmar asistencia, utiliza el botón de registro.
-          </p>
-
-          <div class="envelope-wrap">
-            <div class="envelope" aria-label="Invitación con sobre digital">
-              <div id="env" class="envelope-shell" role="button" tabindex="0" aria-pressed="false" aria-label="Abrir o cerrar el sobre">
-                <div class="env-body" aria-hidden="true">
-                  <div class="env-left"></div>
-                  <div class="env-right"></div>
-                  <div class="env-bottom"></div>
-                </div>
-
-                <div class="env-flap" aria-hidden="true"></div>
-
-                <article class="letter" aria-label="Carta de invitación">
-                  <div class="seal" aria-hidden="true">DF</div>
-
-                  <h3>Estás cordialmente invitado(a)</h3>
-                  <p class="meta">
-                    <strong>Sábado 30 de mayo de 2026</strong> · Coatepec / Xico, Veracruz
-                  </p>
-
-                  <div class="grid">
-                    <div class="mini">
-                      <strong>Ceremonia religiosa</strong>
-                      Iglesia de la Virgen de Guadalupe<br/>
-                      <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Iglesia%20de%20la%20Virgen%20de%20Guadalupe%2C%205a%20Aldama%2C%20Centro%2C%20Coatepec%2C%20Veracruz">
-                        5a Aldama, Centro, CP 91500, Coatepec, Veracruz
-                      </a>
-                    </div>
-                    <div class="mini">
-                      <strong>Recepción</strong>
-                      Salón Campestre Los Encinos<br/>
-                      <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Salon%20Campestre%20Los%20Encinos%2C%20Camino%20a%20Micoxtla%2C%20Xico%2C%20Veracruz">
-                        Camino a Micoxtla, pasando el panteón, Centro, CP 91240, Xico, Veracruz
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="pill" aria-label="Sugerencia">
-                    Confirmación: usa el botón “Registro”.
-                  </div>
-                </article>
-
-                <div class="tap-hint" aria-hidden="true">
-                  <span>Toca el sobre para abrir</span>
-                </div>
-              </div>
+      <section class="card" aria-label="Invitación en sobre digital">
+        <div class="cardhead">
+          <div>
+            <h2>Sobre</h2>
+            <div class="muted" style="font-size:13px; margin-top:4px;">
+              Invitación de distribución personal.
             </div>
           </div>
+          <button id="toggleBtn" class="btn" type="button" aria-controls="envelope" aria-expanded="false">
+            Abrir / Cerrar
+          </button>
+        </div>
 
-          <div class="actions">
-            <button id="toggleBtn" class="btn goldline" type="button">Abrir / Cerrar</button>
-            <a class="btn primary" href="https://danielc-g.github.io/registro-boda-daniel-flor/" target="_blank" rel="noopener">
-              Registro de invitados
-            </a>
+        <div class="stage">
+          <div id="envelope" class="env" role="button" tabindex="0" aria-label="Abrir o cerrar el sobre" aria-pressed="false">
+            <div class="env-hit" aria-hidden="true"></div>
+
+            <div class="env-base" aria-hidden="true">
+              <div class="env-back"></div>
+              <div class="fold-left"></div>
+              <div class="fold-right"></div>
+              <div class="fold-bottom"></div>
+            </div>
+
+            <div class="flap" aria-hidden="true"></div>
+
+            <article class="letter" aria-label="Carta de invitación">
+              <div class="seal" aria-hidden="true">DF</div>
+
+              <div class="letter-inner">
+                <h3>Estás cordialmente invitado(a)</h3>
+                <p class="meta"><strong>Sábado 30 de mayo de 2026</strong> · Coatepec / Xico, Veracruz</p>
+
+                <div class="grid">
+                  <div class="mini">
+                    <strong>Ceremonia religiosa</strong>
+                    Iglesia de la Virgen de Guadalupe<br/>
+                    <a target="_blank" rel="noopener"
+                       href="https://www.google.com/maps/search/?api=1&query=Iglesia%20de%20la%20Virgen%20de%20Guadalupe%2C%205a%20Aldama%2C%20Centro%2C%20Coatepec%2C%20Veracruz">
+                      5a Aldama, Centro, CP 91500, Coatepec, Veracruz
+                    </a>
+                  </div>
+
+                  <div class="mini">
+                    <strong>Recepción</strong>
+                    Salón Campestre Los Encinos<br/>
+                    <a target="_blank" rel="noopener"
+                       href="https://www.google.com/maps/search/?api=1&query=Salon%20Campestre%20Los%20Encinos%2C%20Camino%20a%20Micoxtla%2C%20Xico%2C%20Veracruz">
+                      Camino a Micoxtla, pasando el panteón, Centro, CP 91240, Xico, Veracruz
+                    </a>
+                  </div>
+                </div>
+
+                <div class="cta-row">
+                  <a class="btn primary"
+                     href="https://danielc-g.github.io/registro-boda-daniel-flor/"
+                     target="_blank" rel="noopener">
+                    Registro de invitados
+                  </a>
+                  <span class="muted" style="font-size:13px;">
+                    Confirmación y datos únicamente en el registro.
+                  </span>
+                </div>
+              </div>
+            </article>
           </div>
+        </div>
 
-          <p id="msg" class="muted" style="margin:10px 0 0; font-size:13px;"></p>
-        </section>
-
-        <!-- Información (sin enlaces para compartir) -->
-        <aside class="card">
-          <h2>Confirmación</h2>
-          <p class="muted" style="margin:0 0 10px;">
-            Para confirmar asistencia y registrar tus datos, utiliza el botón “Registro de invitados”.
-          </p>
-
-          <div class="mini" style="margin-top:10px;">
-            <strong>Registro</strong>
-            <a href="https://danielc-g.github.io/registro-boda-daniel-flor/" target="_blank" rel="noopener">
-              Ir al registro de invitados
-            </a>
-          </div>
-
-          <p class="muted" style="margin:12px 0 0; font-size:13px;">
-            Nota: esta invitación es de distribución personal. No se muestran opciones de reenvío desde la página.
-          </p>
-        </aside>
-      </div>
+        <div class="hint" aria-hidden="true">
+          <span>Toca el sobre para abrir</span>
+        </div>
+      </section>
 
       <footer>
-        Daniel &amp; Flor
+        Daniel  &amp; Flor 
       </footer>
     </div>
   </div>
 
   <script>
     (function(){
-      const envShell = document.getElementById('env');
+      const env = document.getElementById('envelope');
       const toggleBtn = document.getElementById('toggleBtn');
-      const msg = document.getElementById('msg');
 
-      function setMessage(text){ msg.textContent = text || ""; }
-
-      function toggleOpen(){
-        const isOpen = envShell.classList.toggle('open');
-        envShell.setAttribute('aria-pressed', String(isOpen));
-        setMessage(isOpen ? "Sobre abierto. Si deseas confirmar asistencia, usa el botón de registro." : "Sobre cerrado.");
+      function setState(open){
+        env.classList.toggle('is-open', open);
+        env.setAttribute('aria-pressed', String(open));
+        toggleBtn.setAttribute('aria-expanded', String(open));
       }
 
-      envShell.addEventListener('click', toggleOpen);
-      envShell.addEventListener('keydown', (e) => {
-        if(e.key === "Enter" || e.key === " "){
+      function toggle(){
+        const open = !env.classList.contains('is-open');
+        setState(open);
+      }
+
+      env.addEventListener('click', toggle);
+      env.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' '){
           e.preventDefault();
-          toggleOpen();
+          toggle();
         }
       });
-      toggleBtn.addEventListener('click', toggleOpen);
+      toggleBtn.addEventListener('click', toggle);
 
-      setMessage("Consejo: toca el sobre para abrirlo.");
+      // estado inicial (cerrado)
+      setState(false);
     })();
   </script>
 </body>
