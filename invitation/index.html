@@ -78,23 +78,11 @@
       content:"";
       position:absolute;
       inset: 0;
-      opacity: .22;              /* intensidad del arreglo floral */
-      background-image:
-        url("bg-roses.svg"),
-        url("bg-roses.svg"),
-        url("bg-roses.svg"),
-        url("bg-roses.svg");
-      background-repeat: no-repeat;
-      background-position:
-        -40px -40px,
-        calc(100% + 40px) -40px,
-        -40px calc(100% + 40px),
-        calc(100% + 40px) calc(100% + 40px);
-      background-size:
-        560px auto,
-        560px auto,
-        560px auto,
-        560px auto;
+      opacity: .45;              /* intensidad del arreglo floral */
+      background-image: url("bg-roses.svg");
+      background-repeat: repeat;
+      background-position: center;
+      background-size: 520px auto;
       filter: saturate(1.05);
     }
 
@@ -103,7 +91,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background: rgba(255,255,255,.60);
+      background: rgba(255,255,255,.45);
     }
 
     .wrap{
@@ -460,6 +448,45 @@
       .flap, .letter, .btn { transition: none !important; }
     }
 
+    @media (max-width: 600px){
+      .wrap{
+        padding: 18px 12px 32px;
+      }
+
+      .card{
+        padding: 12px;
+      }
+
+      .stage{
+        padding: 6px 0 2px;
+      }
+
+      .env{
+        width: 100%;
+        aspect-ratio: 4 / 3;
+      }
+
+      .env-clip{
+        inset: 12% 0 0 0;
+        border-radius: 18px;
+      }
+
+      .letter{
+        bottom: 4%;
+        height: 86%;
+        width: 92%;
+        border-radius: 14px;
+      }
+
+      .letter-inner{
+        padding: 12px 12px 10px;
+      }
+
+      .env.is-open .letter{
+        transform: translateX(-50%) translateY(-12%);
+      }
+    }
+
     :focus-visible{
       outline: 3px solid rgba(200,162,74,.45);
       outline-offset: 2px;
@@ -512,11 +539,11 @@
               <div class="fold-bottom"></div>
 
               <article class="letter" aria-label="Carta de invitación">
-                <div class="seal" aria-hidden="true">DF</div>
+                <div class="seal" aria-hidden="true">D&amp;F</div>
 
                 <div class="letter-inner">
                   <h3>Estás cordialmente invitado(a)</h3>
-                  <p class="meta"><strong>Sábado 30 de mayo de 2026</strong> · Coatepec / Xico, Veracruz</p>
+                  <p class="meta"><strong>Sábado 30 de mayo de 2026 · 12:00 hrs</strong> · Coatepec / Xico, Veracruz</p>
 
                   <div class="grid">
                     <div class="mini">
@@ -556,9 +583,6 @@
           </div>
         </div>
 
-        <div class="hint" aria-hidden="true">
-          <span>Toca el sobre para abrir</span>
-        </div>
       </section>
 
       <footer>
@@ -574,7 +598,6 @@
 
       function setState(open){
         env.classList.toggle('is-open', open);
-        env.setAttribute('aria-pressed', String.item ? "false" : "false"); // no-op safety
         env.setAttribute('aria-pressed', String(open));
         toggleBtn.setAttribute('aria-expanded', String(open));
       }
