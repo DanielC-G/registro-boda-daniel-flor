@@ -56,7 +56,18 @@
       <use href="#rose" x="90" y="186" transform="scale(0.72) rotate(-6 90 186)"/>
       <use href="#rose" x="180" y="176" transform="scale(0.68) rotate(14 180 176)"/>
     </g>
+
+    <!-- Patrón de rosas para rellenar todo el lienzo -->
+    <pattern id="rose-field" width="220" height="220" patternUnits="userSpaceOnUse">
+      <use href="#rose" x="30" y="30" transform="scale(0.9) rotate(-8 30 30)"/>
+      <use href="#rose" x="140" y="20" transform="scale(0.8) rotate(12 140 20)"/>
+      <use href="#rose" x="20" y="130" transform="scale(0.78) rotate(16 20 130)"/>
+      <use href="#rose" x="130" y="140" transform="scale(0.85) rotate(-14 130 140)"/>
+    </pattern>
   </defs>
+
+  <!-- Fondo floral completo -->
+  <rect x="0" y="0" width="1600" height="900" fill="url(#rose-field)"/>
 
   <!-- Marco dorado -->
   <rect x="36" y="36" width="1528" height="828" rx="28" fill="none" stroke="url(#gold)" stroke-width="10"/>
