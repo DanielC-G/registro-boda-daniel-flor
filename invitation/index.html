@@ -1,1 +1,588 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daniel & Flor | Invitación</title>
+  <meta name="description" content="Invitación digital. Toca para abrir el sobre y ver los detalles. Incluye enlace al registro de invitados." />
+
+  <!-- URL base de ESTA invitación -->
+  <link rel="canonical" href="https://danielc-g.github.io/registro-boda-daniel-flor/invitation/" />
+
+  <!-- Open Graph (previsualización en WhatsApp/Messenger) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_MX" />
+  <meta property="og:title" content="Daniel & Flor | Invitación" />
+  <meta property="og:description" content="Toca para abrir el sobre y ver los detalles. Registro de invitados incluido." />
+  <meta property="og:url" content="https://danielc-g.github.io/registro-boda-daniel-flor/invitation/" />
+  <!-- IMPORTANTE: crea y sube invitation/preview.jpg (recomendado 1200x630) -->
+  <meta property="og:image" content="https://danielc-g.github.io/registro-boda-daniel-flor/invitation/preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Daniel & Flor | Invitación" />
+  <meta name="twitter:description" content="Toca para abrir el sobre y ver los detalles. Registro de invitados incluido." />
+  <meta name="twitter:image" content="https://danielc-g.github.io/registro-boda-daniel-flor/invitation/preview.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#FFFFFF;
+      --text:#1F1F1F;
+      --muted:#6B6B6B;
+      --soft:#F3F3F3;
+      --gold:#C8A24A;
+
+      --paper:#FFFFFF;
+      --env:#F7F5F0;       /* cuerpo del sobre */
+      --env-2:#EFEAE0;     /* solapa/sombra */
+      --stroke:rgba(31,31,31,.10);
+      --shadow: 0 24px 60px rgba(31,31,31,.12);
+      --shadow2: 0 10px 24px rgba(31,31,31,.10);
+
+      --radius: 18px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(200,162,74,.14), transparent 60%),
+        radial-gradient(1000px 700px at 10% 110%, rgba(31,31,31,.05), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.45;
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding: 28px 16px 40px;
+    }
+
+    .container{
+      width:min(980px, 100%);
+      margin:0 auto;
+    }
+
+    header{
+      text-align:center;
+      margin-bottom: 18px;
+    }
+
+    .kicker{
+      color:var(--muted);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size: 12px;
+      margin: 0 0 8px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(30px, 4vw, 44px);
+      letter-spacing:.01em;
+    }
+
+    .sub{
+      margin:0 auto;
+      color:var(--muted);
+      max-width: 54ch;
+      font-size: 15px;
+    }
+
+    .stage{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items:start;
+      margin-top: 22px;
+    }
+
+    @media (min-width: 920px){
+      .stage{ grid-template-columns: 1.05fr .95fr; gap: 28px; }
+    }
+
+    .card{
+      background: rgba(255,255,255,.72);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(6px);
+      padding: 16px;
+    }
+
+    .card h2{
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 600;
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    .muted{ color: var(--muted); }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .btn{
+      appearance:none;
+      border: 1px solid var(--stroke);
+      background: #fff;
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor:pointer;
+      transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+    }
+
+    .btn:hover{ box-shadow: 0 10px 24px rgba(31,31,31,.10); border-color: rgba(200,162,74,.35); }
+    .btn:active{ transform: translateY(1px); }
+
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(200,162,74,.22), rgba(200,162,74,.12));
+      border-color: rgba(200,162,74,.45);
+    }
+
+    .btn.goldline{
+      border-color: rgba(200,162,74,.55);
+    }
+
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(200,162,74,.10);
+      border: 1px solid rgba(200,162,74,.25);
+      color: var(--text);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    /* --- Sobre --- */
+    .envelope-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 8px 6px;
+    }
+
+    .envelope{
+      width: min(520px, 100%);
+      position:relative;
+      border-radius: var(--radius);
+      padding: 18px 18px 22px;
+      background: transparent;
+    }
+
+    .envelope-shell{
+      position:relative;
+      width:100%;
+      height: 320px;
+      border-radius: 22px;
+      background: transparent;
+      perspective: 1200px;
+      outline: none;
+    }
+
+    .env-body{
+      position:absolute;
+      inset: 38px 0 0 0;
+      border-radius: 20px;
+      background: var(--env);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .env-bottom{
+      position:absolute;
+      inset:auto 0 0 0;
+      height: 60%;
+      background: linear-gradient(180deg, rgba(0,0,0,0), rgba(31,31,31,.03));
+      pointer-events:none;
+    }
+
+    .env-left, .env-right{
+      position:absolute;
+      bottom:0;
+      width:0; height:0;
+      border-style: solid;
+      opacity:.95;
+    }
+
+    .env-left{
+      left:0;
+      border-width: 140px 0 0 260px;
+      border-color: transparent transparent transparent var(--env-2);
+    }
+
+    .env-right{
+      right:0;
+      border-width: 140px 260px 0 0;
+      border-color: transparent var(--env-2) transparent transparent;
+    }
+
+    .env-flap{
+      position:absolute;
+      top: 38px;
+      left:0; right:0;
+      height: 160px;
+      transform-origin: top center;
+      transform: rotateX(0deg);
+      transition: transform .75s cubic-bezier(.2,.8,.2,1);
+      z-index: 4;
+    }
+
+    .env-flap::before{
+      content:"";
+      position:absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width:0; height:0;
+      border-style: solid;
+      border-width: 0 260px 160px 260px;
+      border-color: transparent transparent var(--env-2) transparent;
+      filter: drop-shadow(0 10px 20px rgba(31,31,31,.10));
+    }
+
+    .letter{
+      position:absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 22px;
+      width: calc(100% - 46px);
+      height: 260px;
+      border-radius: 16px;
+      background: var(--paper);
+      border: 1px solid var(--stroke);
+      box-shadow: 0 12px 30px rgba(31,31,31,.10);
+      padding: 18px 18px 16px;
+      z-index: 2;
+      transition: transform .75s cubic-bezier(.2,.8,.2,1), height .75s cubic-bezier(.2,.8,.2,1);
+      transform: translateX(-50%) translateY(90px);
+      overflow:hidden;
+    }
+
+    .seal{
+      position:absolute;
+      top: 12px;
+      right: 12px;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.70), rgba(255,255,255,0) 55%),
+                  rgba(200,162,74,.26);
+      border: 1px solid rgba(200,162,74,.55);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing:.02em;
+      font-family: "Playfair Display", Georgia, serif;
+      user-select:none;
+    }
+
+    .letter h3{
+      margin: 0 0 6px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 22px;
+      letter-spacing:.01em;
+    }
+
+    .letter .meta{
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+
+    .letter .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 520px){
+      .letter .grid{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .mini{
+      background: rgba(31,31,31,.03);
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      padding: 10px 10px;
+    }
+
+    .mini strong{
+      display:block;
+      font-size: 13px;
+      margin-bottom: 4px;
+      letter-spacing:.02em;
+    }
+
+    .mini a{
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(200,162,74,.55);
+    }
+    .mini a:hover{ border-bottom-color: rgba(200,162,74,1); }
+
+    .open .env-flap{ transform: rotateX(-165deg); }
+    .open .letter{
+      transform: translateX(-50%) translateY(0px);
+      height: 292px;
+    }
+
+    .tap-hint{
+      position:absolute;
+      inset: 0;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding-bottom: 10px;
+      z-index: 5;
+      pointer-events:none;
+    }
+
+    .tap-hint span{
+      font-size: 13px;
+      color: var(--muted);
+      background: rgba(255,255,255,.70);
+      border: 1px solid var(--stroke);
+      border-radius: 999px;
+      padding: 8px 10px;
+      backdrop-filter: blur(6px);
+    }
+
+    footer{
+      text-align:center;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .env-flap, .letter, .btn { transition: none !important; }
+    }
+
+    :focus-visible{
+      outline: 3px solid rgba(200,162,74,.45);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+
+    code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <header>
+        <p class="kicker">Invitación digital</p>
+        <h1>Daniel &amp; Flor</h1>
+        <p class="sub">
+          Toca para abrir el sobre. Encontrarás la información del evento y el enlace al registro de invitados.
+        </p>
+      </header>
+
+      <div class="stage">
+        <!-- Sobre -->
+        <section class="card">
+          <h2>Sobre</h2>
+          <p class="muted" style="margin:0 0 10px;">
+            Puedes abrir y cerrar el sobre. El botón de registro te llevará a tu página de confirmación.
+          </p>
+
+          <div class="envelope-wrap">
+            <div class="envelope" aria-label="Invitación con sobre digital">
+              <div id="env" class="envelope-shell" role="button" tabindex="0" aria-pressed="false" aria-label="Abrir o cerrar el sobre">
+                <div class="env-body" aria-hidden="true">
+                  <div class="env-left"></div>
+                  <div class="env-right"></div>
+                  <div class="env-bottom"></div>
+                </div>
+
+                <div class="env-flap" aria-hidden="true"></div>
+
+                <article class="letter" aria-label="Carta de invitación">
+                  <div class="seal" aria-hidden="true">DF</div>
+
+                  <h3>Estás cordialmente invitado(a)</h3>
+                  <p class="meta">
+                    <strong>Sábado 30 de mayo de 2026</strong> · Coatepec / Xico, Veracruz
+                  </p>
+
+                  <div class="grid">
+                    <div class="mini">
+                      <strong>Ceremonia religiosa</strong>
+                      Iglesia de la Virgen de Guadalupe<br/>
+                      <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Iglesia%20de%20la%20Virgen%20de%20Guadalupe%2C%205a%20Aldama%2C%20Centro%2C%20Coatepec%2C%20Veracruz">
+                        5a Aldama, Centro, CP 91500, Coatepec, Veracruz
+                      </a>
+                    </div>
+                    <div class="mini">
+                      <strong>Recepción</strong>
+                      Salón Campestre Los Encinos<br/>
+                      <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Salon%20Campestre%20Los%20Encinos%2C%20Camino%20a%20Micoxtla%2C%20Xico%2C%20Veracruz">
+                        Camino a Micoxtla, pasando el panteón, Centro, CP 91240, Xico, Veracruz
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="pill" aria-label="Sugerencia">
+                    Confirmación: usa el botón “Registro” a continuación.
+                  </div>
+                </article>
+
+                <div class="tap-hint" aria-hidden="true">
+                  <span>Toca el sobre para abrir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="toggleBtn" class="btn goldline" type="button">Abrir / Cerrar</button>
+            <a class="btn primary" href="https://danielc-g.github.io/registro-boda-daniel-flor/" target="_blank" rel="noopener">
+              Registro de invitados
+            </a>
+          </div>
+
+          <div class="actions" style="margin-top:10px;">
+            <button id="shareBtn" class="btn" type="button">Compartir</button>
+            <a id="waBtn" class="btn" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+            <button id="copyBtn" class="btn" type="button">Copiar enlace</button>
+          </div>
+
+          <p id="msg" class="muted" style="margin:10px 0 0; font-size:13px;"></p>
+        </section>
+
+        <!-- Información resumida -->
+        <aside class="card">
+          <h2>Detalles</h2>
+          <p class="muted" style="margin:0 0 10px;">
+            Comparte esta invitación como enlace (WhatsApp/Messenger). Al abrir, el invitado verá el sobre y podrá ir al registro.
+          </p>
+
+          <div class="mini" style="margin-top:10px;">
+            <strong>Enlace de invitación</strong>
+            <span class="muted" id="inviteUrl"></span>
+          </div>
+
+          <div class="mini" style="margin-top:10px;">
+            <strong>Enlace de registro</strong>
+            <a href="https://danielc-g.github.io/registro-boda-daniel-flor/" target="_blank" rel="noopener">
+              https://danielc-g.github.io/registro-boda-daniel-flor/
+            </a>
+          </div>
+
+          <p class="muted" style="margin:12px 0 0; font-size:13px;">
+            Para que WhatsApp muestre una tarjeta de vista previa, sube un archivo <code>preview.jpg</code> a esta misma carpeta:
+            <code>invitation/preview.jpg</code>.
+          </p>
+        </aside>
+      </div>
+
+      <footer>
+        Daniel Cerqueda García &amp; Flor Esperanza Hernández Martínez
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const envShell = document.getElementById('env');
+      const toggleBtn = document.getElementById('toggleBtn');
+      const shareBtn = document.getElementById('shareBtn');
+      const copyBtn = document.getElementById('copyBtn');
+      const waBtn = document.getElementById('waBtn');
+      const msg = document.getElementById('msg');
+      const inviteUrlEl = document.getElementById('inviteUrl');
+
+      // URLs correctas para tu estructura actual
+      const inviteUrl = "https://danielc-g.github.io/registro-boda-daniel-flor/invitation/";
+      const registerUrl = "https://danielc-g.github.io/registro-boda-daniel-flor/";
+
+      inviteUrlEl.textContent = inviteUrl;
+
+      const waText =
+        "Invitación digital — Daniel & Flor.\n" +
+        "Abre el sobre aquí: " + inviteUrl + "\n" +
+        "Registro de invitados: " + registerUrl;
+
+      waBtn.href = "https://wa.me/?text=" + encodeURIComponent(waText);
+
+      function setMessage(text){ msg.textContent = text || ""; }
+
+      function toggleOpen(){
+        const isOpen = envShell.classList.toggle('open');
+        envShell.setAttribute('aria-pressed', String(isOpen));
+        setMessage(isOpen ? "Sobre abierto. Puedes ir al registro o compartir el enlace." : "Sobre cerrado.");
+      }
+
+      envShell.addEventListener('click', toggleOpen);
+      envShell.addEventListener('keydown', (e) => {
+        if(e.key === "Enter" || e.key === " "){
+          e.preventDefault();
+          toggleOpen();
+        }
+      });
+      toggleBtn.addEventListener('click', toggleOpen);
+
+      copyBtn.addEventListener('click', async () => {
+        try{
+          await navigator.clipboard.writeText(inviteUrl);
+          setMessage("Enlace copiado: " + inviteUrl);
+        }catch(err){
+          setMessage("No se pudo copiar automáticamente. Copia manualmente: " + inviteUrl);
+        }
+      });
+
+      shareBtn.addEventListener('click', async () => {
+        try{
+          if(navigator.share){
+            await navigator.share({
+              title: "Daniel & Flor | Invitación",
+              text: waText,
+              url: inviteUrl
+            });
+            setMessage("Listo: invitación compartida.");
+          }else{
+            await navigator.clipboard.writeText(inviteUrl);
+            setMessage("Tu navegador no soporta 'Compartir'. Enlace copiado: " + inviteUrl);
+          }
+        }catch(err){
+          setMessage("");
+        }
+      });
+
+      setMessage("Consejo: toca el sobre para abrirlo.");
+    })();
+  </script>
+</body>
+</html>
 
