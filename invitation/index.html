@@ -154,17 +154,7 @@
       outline: none;
     }
 
-    /* CLICK AREA */
-    .env-hit{
-      position:absolute;
-      inset:0;
-      border-radius: 22px;
-      cursor:pointer;
-      z-index: 10;
-      background: transparent;
-    }
-
-    /* CLIPPED ENVELOPE BODY (THIS FIXES VISIBILITY WHEN CLOSED) */
+    /* CLIPPED ENVELOPE BODY */
     .env-clip{
       position:absolute;
       inset: 16% 0 0 0;
@@ -232,7 +222,7 @@
       border-bottom: none;
     }
 
-    /* LETTER (now INSIDE env-clip, so it can be fully hidden) */
+    /* LETTER (inside env-clip) */
     .letter{
       position:absolute;
       left: 50%;
@@ -244,8 +234,8 @@
       border-radius: 16px;
       box-shadow: 0 12px 26px rgba(31,31,31,.10);
       overflow:hidden;
-      transform: translateX(-50%) translateY(120%); /* closed: push down */
-      opacity: 0;                                 /* closed: invisible */
+      transform: translateX(-50%) translateY(120%); /* closed */
+      opacity: 0;
       transition:
         transform .75s cubic-bezier(.2,.8,.2,1),
         opacity .35s ease;
@@ -256,6 +246,8 @@
       height:100%;
       padding: 16px 16px 14px;
       overflow:auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
     }
 
     .seal{
@@ -349,7 +341,7 @@
       transform: rotateX(-180deg);
     }
     .env.is-open .letter{
-      transform: translateX(-50%) translateY(-6%); /* open: slide up into view */
+      transform: translateX(-50%) translateY(-6%);
       opacity: 1;
       transition:
         transform .75s cubic-bezier(.2,.8,.2,1),
@@ -401,9 +393,7 @@
 
         <div class="stage">
           <div id="envelope" class="env" role="button" tabindex="0" aria-label="Abrir o cerrar el sobre" aria-pressed="false">
-            <div class="env-hit" aria-hidden="true"></div>
-
-            <div class="env-clip" aria-hidden="true">
+            <div class="env-clip" aria-hidden="false">
               <div class="fold-left"></div>
               <div class="fold-right"></div>
               <div class="fold-bottom"></div>
@@ -467,7 +457,6 @@
   <script>
     (function(){
       const env = document.getElementById('envelope');
-      const hit = env.querySelector('.env-hit');
       const toggleBtn = document.getElementById('toggleBtn');
 
       function setState(open){
@@ -480,16 +469,23 @@
         setState(!env.classList.contains('is-open'));
       }
 
-      hit.addEventListener('click', toggle);
+      // Click en el sobre: abre/cierra,
+      // pero si el click ocurre dentro de la carta, NO alterna (permite scroll y selección).
+      env.addEventListener('click', (e) => {
+        if (e.target.closest('.letter')) return;
+        toggle();
+      });
+
       env.addEventListener('keydown', (e) => {
         if(e.key === 'Enter' || e.key === ' '){
           e.preventDefault();
           toggle();
         }
       });
+
       toggleBtn.addEventListener('click', toggle);
 
-      setState(false); // inicia cerrado
+      setState(false);
     })();
   </script>
 </body>
