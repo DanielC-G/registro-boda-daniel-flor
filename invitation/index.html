@@ -71,9 +71,8 @@
       opacity: .6;
       pointer-events:none;
       background-image: url("bg-roses.svg");
-      background-size: 780px 780px;
-      background-size: 520px 520px;
-      background-position: center;
+      background-size: 900px 900px;
+      background-position: 0 0;
       background-repeat: repeat;
       filter: blur(.2px);
     }
@@ -224,6 +223,7 @@
     /* Envelope */
     .env{
       width: min(704px, 100%);
+      aspect-ratio: 16 / 11;
       aspect-ratio: 16 / 10;
       position: relative;
       perspective: 1200px;
@@ -293,6 +293,16 @@
       border-top-right-radius: 18px;
       border: 1px solid rgba(200,162,74,.25);
       border-bottom: none;
+    }
+    .flap::after{
+      content:"";
+      position:absolute;
+      inset: 6px 10px 8px;
+      border-radius: 14px 14px 0 0;
+      border: 1px solid rgba(200,162,74,.55);
+      border-bottom: none;
+      clip-path: polygon(0% 0%, 100% 0%, 50% 76%);
+      pointer-events:none;
     }
 
     /* LETTER */
