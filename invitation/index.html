@@ -472,7 +472,7 @@
       transform: translate(-50%, -50%);
       width: min(720px, 92vw);
       max-height: 95vh;
-      height: auto;
+      height: 95vh;
       overflow: visible;
       box-shadow: 0 28px 80px rgba(31,31,31,.22);
       z-index: 4;
@@ -483,8 +483,6 @@
       max-height: calc(95vh - 40px);
       overflow: auto;
       touch-action: pan-y;
-      overflow: visible;
-      height: auto;
       padding: 20px 22px 18px;
     }
 
@@ -560,19 +558,7 @@
 
       .env.is-open.is-modal .letter{
         width: min(680px, 92vw);
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-      }
-
-      .env.is-open.is-modal .letter-inner{
-        max-height: calc(90vh - 32px);
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-      }
-
-      .env.is-open.is-modal .letter-inner{
-        height: auto;
-        max-height: calc(90vh - 32px);
+        height: 95vh;
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
       }
@@ -580,6 +566,7 @@
       .env.is-open.is-modal .letter-inner{
         height: 100%;
         max-height: calc(95vh - 32px);
+        overflow: auto;
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
         touch-action: pan-y;
