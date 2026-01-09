@@ -58,11 +58,12 @@
     </g>
 
     <!-- Patrón de rosas para rellenar todo el lienzo -->
-    <pattern id="rose-field" width="220" height="220" patternUnits="userSpaceOnUse">
-      <use href="#rose" x="30" y="30" transform="scale(0.9) rotate(-8 30 30)"/>
-      <use href="#rose" x="140" y="20" transform="scale(0.8) rotate(12 140 20)"/>
-      <use href="#rose" x="20" y="130" transform="scale(0.78) rotate(16 20 130)"/>
-      <use href="#rose" x="130" y="140" transform="scale(0.85) rotate(-14 130 140)"/>
+    <pattern id="rose-field" width="160" height="160" patternUnits="userSpaceOnUse">
+      <use href="#rose" x="22" y="22" transform="scale(0.82) rotate(-8 22 22)"/>
+      <use href="#rose" x="92" y="18" transform="scale(0.76) rotate(12 92 18)"/>
+      <use href="#rose" x="18" y="92" transform="scale(0.74) rotate(16 18 92)"/>
+      <use href="#rose" x="92" y="98" transform="scale(0.78) rotate(-14 92 98)"/>
+      <use href="#rose" x="130" y="130" transform="scale(0.7) rotate(10 130 130)"/>
     </pattern>
   </defs>
 
