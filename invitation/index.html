@@ -71,9 +71,9 @@
       opacity: .6;
       pointer-events:none;
       background-image: url("bg-roses.svg");
-      background-size: cover;
+      background-size: 520px 520px;
       background-position: center;
-      background-repeat: no-repeat;
+      background-repeat: repeat;
       filter: blur(.2px);
     }
 
@@ -161,23 +161,6 @@
       pointer-events:none;
     }
 
-    /* Ornamentos de esquina (dentro de la tarjeta, pero discretos) */
-    .card::after{
-      content:"";
-      position:absolute;
-      inset: 0;
-      pointer-events:none;
-      opacity: .55;
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23C8A24A' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M22 66c34-34 78-44 124-34'/%3E%3Cpath d='M22 66c26 2 44 22 46 50'/%3E%3Cpath d='M68 116c22-8 40-4 50 18'/%3E%3Cpath d='M218 174c-34 34-78 44-124 34'/%3E%3Cpath d='M218 174c-26-2-44-22-46-50'/%3E%3Cpath d='M172 124c-22 8-40 4-50-18'/%3E%3C/g%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position:
-        14px 14px,
-        calc(100% - 254px) calc(100% - 254px);
-      background-size: 240px 240px;
-      filter: drop-shadow(0 10px 18px rgba(31,31,31,.06));
-    }
-
     .cardhead{
       display:flex;
       align-items:flex-start;
@@ -239,7 +222,7 @@
 
     /* Envelope */
     .env{
-      width: min(640px, 100%);
+      width: min(704px, 100%);
       aspect-ratio: 16 / 10;
       position: relative;
       perspective: 1200px;
