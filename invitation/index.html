@@ -254,6 +254,7 @@
       border-radius: 22px;
       user-select:none;
       outline: none;
+      z-index: 3;
     }
 
     .env-clip{
@@ -465,6 +466,42 @@
         opacity .15s ease;
     }
 
+    .env.is-open.is-modal .letter{
+      position: fixed;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      width: min(720px, 92vw);
+      max-height: 90vh;
+      height: auto;
+      overflow: visible;
+      box-shadow: 0 28px 80px rgba(31,31,31,.22);
+      z-index: 4;
+    }
+
+    .env.is-open.is-modal .letter-inner{
+      overflow: visible;
+      padding: 20px 22px 18px;
+    }
+
+    .backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(31,31,31,.35);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+      z-index: 2;
+    }
+
+    body.letter-open{
+      overflow: hidden;
+    }
+
+    body.letter-open .backdrop{
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     footer{
       text-align:center;
       margin-top: 14px;
@@ -515,6 +552,10 @@
         transform: translateX(-50%) translateY(-12%) scale(1.03);
         transform: translateX(-50%) translateY(-12%);
       }
+
+      .env.is-open.is-modal .letter{
+        width: min(680px, 92vw);
+      }
     }
 
     :focus-visible{
@@ -562,6 +603,7 @@
         </div>
 
         <div class="stage">
+          <div class="backdrop" aria-hidden="true"></div>
           <div id="envelope" class="env" role="button" tabindex="0" aria-label="Abrir o cerrar el sobre" aria-pressed="false">
             <div class="env-clip" aria-hidden="false">
               <div class="fold-left"></div>
@@ -625,9 +667,12 @@
     (function(){
       const env = document.getElementById('envelope');
       const toggleBtn = document.getElementById('toggleBtn');
+      const backdrop = document.querySelector('.backdrop');
 
       function setState(open){
         env.classList.toggle('is-open', open);
+        env.classList.toggle('is-modal', open);
+        document.body.classList.toggle('letter-open', open);
         env.setAttribute('aria-pressed', String(open));
         toggleBtn.setAttribute('aria-expanded', String(open));
       }
@@ -640,6 +685,10 @@
         if (e.target.closest('.letter')) return;
         toggle();
       });
+
+      if (backdrop) {
+        backdrop.addEventListener('click', () => setState(false));
+      }
 
       env.addEventListener('keydown', (e) => {
         if(e.key === 'Enter' || e.key === ' '){
