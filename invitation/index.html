@@ -334,12 +334,22 @@
       border-radius: 16px;
       box-shadow: 0 12px 26px rgba(31,31,31,.10);
       overflow:hidden;
-      transform: translateX(-50%) translateY(120%);
+      transform: translateX(-50%) translateY(120%) scale(0.96);
       opacity: 0;
       transition:
         transform .75s cubic-bezier(.2,.8,.2,1),
-        opacity .35s ease;
+        opacity .35s ease,
+        box-shadow .75s cubic-bezier(.2,.8,.2,1);
       z-index: 3;
+    }
+
+    .letter::before{
+      content:"";
+      position:absolute;
+      inset: 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(200,162,74,.35);
+      pointer-events:none;
     }
 
     .letter-inner{
@@ -447,8 +457,9 @@
       transform: rotateX(-180deg);
     }
     .env.is-open .letter{
-      transform: translateX(-50%) translateY(-6%);
+      transform: translateX(-50%) translateY(-8%) scale(1.03);
       opacity: 1;
+      box-shadow: 0 22px 42px rgba(31,31,31,.18);
       transition:
         transform .75s cubic-bezier(.2,.8,.2,1),
         opacity .15s ease;
@@ -493,6 +504,7 @@
         height: 86%;
         width: 92%;
         border-radius: 14px;
+        transform: translateX(-50%) translateY(120%) scale(0.97);
       }
 
       .letter-inner{
@@ -500,6 +512,7 @@
       }
 
       .env.is-open .letter{
+        transform: translateX(-50%) translateY(-12%) scale(1.03);
         transform: translateX(-50%) translateY(-12%);
       }
     }
@@ -559,6 +572,7 @@
                 <div class="seal" aria-hidden="true">D&amp;F</div>
 
                 <div class="letter-inner">
+                  <h3>Estás cordialmente invitado(a)</h3>
                   <h3>Estás cordialmente invitado(a) a nuestra boda</h3>
                   <p class="meta"><strong>Sábado 30 de mayo de 2026 · 12:00 hrs</strong> · Coatepec / Xico, Veracruz</p>
 
