@@ -471,15 +471,18 @@
       inset: 50% auto auto 50%;
       transform: translate(-50%, -50%);
       width: min(720px, 92vw);
-      max-height: 90vh;
+      max-height: 95vh;
       height: auto;
-      overflow: auto;
+      overflow: visible;
       box-shadow: 0 28px 80px rgba(31,31,31,.22);
       z-index: 4;
     }
 
     .env.is-open.is-modal .letter-inner{
+      height: 100%;
+      max-height: calc(95vh - 40px);
       overflow: auto;
+      touch-action: pan-y;
       padding: 20px 22px 18px;
     }
 
@@ -555,6 +558,14 @@
 
       .env.is-open.is-modal .letter{
         width: min(680px, 92vw);
+      }
+
+      .env.is-open.is-modal .letter-inner{
+        height: 100%;
+        max-height: calc(95vh - 32px);
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
       }
     }
 
