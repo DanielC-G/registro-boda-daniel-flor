@@ -71,6 +71,7 @@
       opacity: .6;
       pointer-events:none;
       background-image: url("bg-roses.svg");
+      background-size: 780px 780px;
       background-size: 520px 520px;
       background-position: center;
       background-repeat: repeat;
@@ -241,6 +242,15 @@
       box-shadow: var(--shadow);
       overflow:hidden;
       z-index: 1;
+    }
+
+    .env-clip::before{
+      content:"";
+      position:absolute;
+      inset: 6px;
+      border-radius: 16px;
+      border: 1px solid rgba(200,162,74,.55);
+      pointer-events:none;
     }
 
     .env-clip::after{
