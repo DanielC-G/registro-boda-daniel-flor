@@ -473,12 +473,13 @@
       width: min(720px, 92vw);
       max-height: 90vh;
       height: auto;
-      overflow: auto;
+      overflow: visible;
       box-shadow: 0 28px 80px rgba(31,31,31,.22);
       z-index: 4;
     }
 
     .env.is-open.is-modal .letter-inner{
+      max-height: calc(90vh - 40px);
       overflow: auto;
       padding: 20px 22px 18px;
     }
@@ -555,6 +556,12 @@
 
       .env.is-open.is-modal .letter{
         width: min(680px, 92vw);
+      }
+
+      .env.is-open.is-modal .letter-inner{
+        max-height: calc(90vh - 32px);
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
     }
 
