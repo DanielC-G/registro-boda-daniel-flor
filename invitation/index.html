@@ -14,7 +14,7 @@
   <meta property="og:description" content="Toca el sobre para abrirlo y ver los detalles. Registro incluido." />
   <meta property="og:url" content="https://danielc-g.github.io/registro-boda-daniel-flor/invitation/" />
 
-  <!-- Preview -->
+  <!-- IMPORTANT: updated to preview2.jpg -->
   <meta property="og:image" content="https://danielc-g.github.io/registro-boda-daniel-flor/invitation/preview2.jpg" />
   <meta property="og:image:secure_url" content="https://danielc-g.github.io/registro-boda-daniel-flor/invitation/preview2.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -50,65 +50,41 @@
 
     *{ box-sizing:border-box; }
     html, body{ height:100%; }
-
     body{
       margin:0;
       color:var(--text);
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height:1.45;
-      background: var(--bg);
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* Fondo principal (rosas blancas + dorado) con SVG externo */
-    .bg{
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
       background:
         radial-gradient(1200px 600px at 50% -10%, rgba(200,162,74,.14), transparent 60%),
         radial-gradient(1000px 700px at 10% 110%, rgba(31,31,31,.05), transparent 55%),
         var(--bg);
+      position: relative;
+      overflow-x: hidden;
     }
 
-    /* SVG floral: colócalo como bg-roses.svg en /invitation/ */
-    .bg::before{
+    /* Fondo fondo: arreglos dorados (sutiles) detrás de TODO, incluyendo el título */
+    body::before{
       content:"";
-      position:absolute;
+      position: fixed;
       inset: 0;
-      opacity: .45;              /* intensidad del arreglo floral */
-      background-image: url("bg-roses.svg");
-      background-repeat: repeat;
-      background-position: center;
-      background-size: 520px auto;
-      opacity: .38;              /* intensidad del arreglo floral */
+      pointer-events:none;
+      opacity: .22; /* más visible pero elegante */
       background-image:
-        url("bg-roses.svg"),
-        url("bg-roses.svg"),
-        url("bg-roses.svg"),
-        url("bg-roses.svg");
-      background-repeat: no-repeat;
-      background-position:
-        -40px -40px,
-        calc(100% + 40px) -40px,
-        -40px calc(100% + 40px),
-        calc(100% + 40px) calc(100% + 40px);
-      background-size:
-        560px auto,
-        560px auto,
-        560px auto,
-        560px auto;
-      filter: saturate(1.05);
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%23C8A24A' stroke-opacity='.32' stroke-width='1.4'%3E%3Cpath d='M68 160c28-44 78-66 124-46 50 22 64 86 22 130-30 32-82 38-118 14-44-28-54-68-28-98z'/%3E%3Cpath d='M150 318c16-34 50-56 88-48 44 10 60 58 32 96-20 28-56 36-86 22-38-18-52-48-34-70z'/%3E%3Cpath d='M356 182c16-38 56-60 94-48 42 14 56 66 26 104-22 28-62 34-92 18-38-20-50-52-28-74z'/%3E%3Cpath d='M348 370c18-34 58-52 96-36 38 16 46 68 14 102-22 22-60 26-86 12-38-20-48-52-24-78z'/%3E%3Cpath d='M254 78c0 52-36 96-82 96S90 130 90 78s36-86 82-86 82 34 82 86z'/%3E%3Cpath d='M402 118c0 42-30 76-70 76s-70-32-70-76 30-66 70-66 70 28 70 66z'/%3E%3Cpath d='M236 444c0 42-30 76-70 76s-70-32-70-76 30-66 70-66 70 28 70 66z'/%3E%3Cpath d='M468 286c0 46-34 84-80 84s-80-36-80-84 34-74 80-74 80 32 80 74z'/%3E%3Cpath d='M84 376c0 46-34 84-80 84s-80-36-80-84 34-74 80-74 80 32 80 74z'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 620px 620px;
+      background-position: center;
+      filter: blur(.2px);
     }
 
-    /* Velo blanco sutil para que el fondo no compita con el contenido */
-    .bg::after{
+    /* Overlay blanco muy sutil para que el fondo nunca compita con el contenido */
+    body::after{
       content:"";
-      position:absolute;
-      inset:0;
-      background: rgba(255,255,255,.45);
+      position: fixed;
+      inset: 0;
+      pointer-events:none;
+      background: rgba(255,255,255,.55);
+      z-index: 0;
     }
 
     .wrap{
@@ -161,11 +137,11 @@
     }
 
     .card{
-      /* CAMBIO CLAVE: opaco para que NO se vean líneas/patrón dentro */
-      background: #FFFFFF;
+      background: rgba(255,255,255,.86);
       border: 1px solid rgba(31,31,31,.10);
       border-radius: var(--radius);
       box-shadow: var(--shadow2);
+      backdrop-filter: blur(10px);
       padding: 16px;
       position: relative;
       overflow: hidden;
@@ -182,9 +158,21 @@
       pointer-events:none;
     }
 
-    /* CAMBIO CLAVE: quitamos los ornamentos dorados dentro de la tarjeta */
+    /* Ornamentos de esquina (dentro de la tarjeta, pero discretos) */
     .card::after{
-      content:none;
+      content:"";
+      position:absolute;
+      inset: 0;
+      pointer-events:none;
+      opacity: .55;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23C8A24A' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M22 66c34-34 78-44 124-34'/%3E%3Cpath d='M22 66c26 2 44 22 46 50'/%3E%3Cpath d='M68 116c22-8 40-4 50 18'/%3E%3Cpath d='M218 174c-34 34-78 44-124 34'/%3E%3Cpath d='M218 174c-26-2-44-22-46-50'/%3E%3Cpath d='M172 124c-22 8-40 4-50-18'/%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position:
+        14px 14px,
+        calc(100% - 254px) calc(100% - 254px);
+      background-size: 240px 240px;
+      filter: drop-shadow(0 10px 18px rgba(31,31,31,.06));
     }
 
     .cardhead{
@@ -197,6 +185,7 @@
       z-index: 2;
     }
 
+    /* IMPORTANTE: quitamos el título "Sobre" (redundante) */
     .cardhead .leftblock{
       display:flex;
       flex-direction:column;
@@ -254,9 +243,9 @@
       border-radius: 22px;
       user-select:none;
       outline: none;
-      z-index: 3;
     }
 
+    /* CLIPPED ENVELOPE BODY */
     .env-clip{
       position:absolute;
       inset: 16% 0 0 0;
@@ -278,6 +267,7 @@
         linear-gradient(180deg, rgba(255,255,255,.25), rgba(255,255,255,0));
     }
 
+    /* FOLDS */
     .fold-left, .fold-right, .fold-bottom{
       position:absolute;
       inset:0;
@@ -298,6 +288,7 @@
       clip-path: polygon(0% 100%, 50% 70%, 100% 100%, 0% 100%);
     }
 
+    /* FLAP */
     .flap{
       position:absolute;
       left:0; right:0;
@@ -324,6 +315,7 @@
       border-bottom: none;
     }
 
+    /* LETTER */
     .letter{
       position:absolute;
       left: 50%;
@@ -335,22 +327,12 @@
       border-radius: 16px;
       box-shadow: 0 12px 26px rgba(31,31,31,.10);
       overflow:hidden;
-      transform: translateX(-50%) translateY(120%) scale(0.96);
+      transform: translateX(-50%) translateY(120%);
       opacity: 0;
       transition:
         transform .75s cubic-bezier(.2,.8,.2,1),
-        opacity .35s ease,
-        box-shadow .75s cubic-bezier(.2,.8,.2,1);
+        opacity .35s ease;
       z-index: 3;
-    }
-
-    .letter::before{
-      content:"";
-      position:absolute;
-      inset: 8px;
-      border-radius: 12px;
-      border: 1px solid rgba(200,162,74,.35);
-      pointer-events:none;
     }
 
     .letter-inner{
@@ -448,63 +430,23 @@
     .hint span{
       font-size: 13px;
       color: var(--muted);
-      background: #FFFFFF;
+      background: rgba(255,255,255,.78);
       border: 1px solid rgba(31,31,31,.10);
       border-radius: 999px;
       padding: 8px 10px;
+      backdrop-filter: blur(6px);
     }
 
+    /* OPEN STATE */
     .env.is-open .flap{
       transform: rotateX(-180deg);
     }
     .env.is-open .letter{
-      transform: translateX(-50%) translateY(-8%) scale(1.03);
+      transform: translateX(-50%) translateY(-6%);
       opacity: 1;
-      box-shadow: 0 22px 42px rgba(31,31,31,.18);
       transition:
         transform .75s cubic-bezier(.2,.8,.2,1),
         opacity .15s ease;
-    }
-
-    .env.is-open.is-modal .letter{
-      position: fixed;
-      inset: 50% auto auto 50%;
-      transform: translate(-50%, -50%);
-      width: min(720px, 92vw);
-      max-height: 95vh;
-      height: 95vh;
-      overflow: hidden;
-      box-shadow: 0 28px 80px rgba(31,31,31,.22);
-      z-index: 4;
-    }
-
-    .env.is-open.is-modal .letter-inner{
-      height: 100%;
-      max-height: calc(95vh - 40px);
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior: contain;
-      touch-action: pan-y;
-      padding: 20px 22px 18px;
-    }
-
-    .backdrop{
-      position: fixed;
-      inset: 0;
-      background: rgba(31,31,31,.35);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .3s ease;
-      z-index: 2;
-    }
-
-    body.letter-open{
-      overflow: hidden;
-    }
-
-    body.letter-open .backdrop{
-      opacity: 1;
-      pointer-events: auto;
     }
 
     footer{
@@ -518,64 +460,6 @@
       .flap, .letter, .btn { transition: none !important; }
     }
 
-    @media (max-width: 600px){
-      .wrap{
-        padding: 18px 12px 32px;
-      }
-
-      .card{
-        padding: 12px;
-      }
-
-      .stage{
-        padding: 6px 0 2px;
-      }
-
-      .env{
-        width: 100%;
-        aspect-ratio: 4 / 3;
-      }
-
-      .env-clip{
-        inset: 12% 0 0 0;
-        border-radius: 18px;
-      }
-
-      .letter{
-        bottom: 4%;
-        height: 86%;
-        width: 92%;
-        border-radius: 14px;
-        transform: translateX(-50%) translateY(120%) scale(0.97);
-      }
-
-      .letter-inner{
-        padding: 12px 12px 10px;
-      }
-
-      .env.is-open .letter{
-        transform: translateX(-50%) translateY(-12%) scale(1.03);
-        transform: translateX(-50%) translateY(-12%);
-      }
-
-      .env.is-open.is-modal .letter{
-        width: min(680px, 92vw);
-        height: 95vh;
-        overflow: hidden;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-      }
-
-      .env.is-open.is-modal .letter-inner{
-        height: 100%;
-        max-height: calc(95vh - 32px);
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-        touch-action: pan-y;
-      }
-    }
-
     :focus-visible{
       outline: 3px solid rgba(200,162,74,.45);
       outline-offset: 2px;
@@ -585,9 +469,6 @@
 </head>
 
 <body>
-  <!-- Fondo floral -->
-  <div class="bg" aria-hidden="true"></div>
-
   <div class="wrap">
     <div class="container">
       <header>
@@ -621,7 +502,6 @@
         </div>
 
         <div class="stage">
-          <div class="backdrop" aria-hidden="true"></div>
           <div id="envelope" class="env" role="button" tabindex="0" aria-label="Abrir o cerrar el sobre" aria-pressed="false">
             <div class="env-clip" aria-hidden="false">
               <div class="fold-left"></div>
@@ -629,11 +509,11 @@
               <div class="fold-bottom"></div>
 
               <article class="letter" aria-label="Carta de invitación">
-                <div class="seal" aria-hidden="true">D&amp;F</div>
+                <div class="seal" aria-hidden="true">DF</div>
 
                 <div class="letter-inner">
-                  <h3>Estás cordialmente invitado(a) a nuestra boda</h3>
-                  <p class="meta"><strong>Sábado 30 de mayo de 2026 · 12:00 hrs</strong> · Coatepec / Xico, Veracruz</p>
+                  <h3>Estás cordialmente invitado(a)</h3>
+                  <p class="meta"><strong>Sábado 30 de mayo de 2026</strong> · Coatepec / Xico, Veracruz</p>
 
                   <div class="grid">
                     <div class="mini">
@@ -673,6 +553,9 @@
           </div>
         </div>
 
+        <div class="hint" aria-hidden="true">
+          <span>Toca el sobre para abrir</span>
+        </div>
       </section>
 
       <footer>
@@ -685,12 +568,9 @@
     (function(){
       const env = document.getElementById('envelope');
       const toggleBtn = document.getElementById('toggleBtn');
-      const backdrop = document.querySelector('.backdrop');
 
       function setState(open){
         env.classList.toggle('is-open', open);
-        env.classList.toggle('is-modal', open);
-        document.body.classList.toggle('letter-open', open);
         env.setAttribute('aria-pressed', String(open));
         toggleBtn.setAttribute('aria-expanded', String(open));
       }
@@ -699,14 +579,11 @@
         setState(!env.classList.contains('is-open'));
       }
 
+      // Click en el sobre abre/cierra, pero si el click es dentro de la carta, NO alterna
       env.addEventListener('click', (e) => {
         if (e.target.closest('.letter')) return;
         toggle();
       });
-
-      if (backdrop) {
-        backdrop.addEventListener('click', () => setState(false));
-      }
 
       env.addEventListener('keydown', (e) => {
         if(e.key === 'Enter' || e.key === ' '){
