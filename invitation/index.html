@@ -83,6 +83,23 @@
       background-repeat: repeat;
       background-position: center;
       background-size: 520px auto;
+      opacity: .38;              /* intensidad del arreglo floral */
+      background-image:
+        url("bg-roses.svg"),
+        url("bg-roses.svg"),
+        url("bg-roses.svg"),
+        url("bg-roses.svg");
+      background-repeat: no-repeat;
+      background-position:
+        -40px -40px,
+        calc(100% + 40px) -40px,
+        -40px calc(100% + 40px),
+        calc(100% + 40px) calc(100% + 40px);
+      background-size:
+        560px auto,
+        560px auto,
+        560px auto,
+        560px auto;
       filter: saturate(1.05);
     }
 
@@ -496,6 +513,7 @@
 
       .env.is-open .letter{
         transform: translateX(-50%) translateY(-12%) scale(1.03);
+        transform: translateX(-50%) translateY(-12%);
       }
     }
 
@@ -555,6 +573,7 @@
 
                 <div class="letter-inner">
                   <h3>Estás cordialmente invitado(a)</h3>
+                  <h3>Estás cordialmente invitado(a) a nuestra boda</h3>
                   <p class="meta"><strong>Sábado 30 de mayo de 2026 · 12:00 hrs</strong> · Coatepec / Xico, Veracruz</p>
 
                   <div class="grid">
