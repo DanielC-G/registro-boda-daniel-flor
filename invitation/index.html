@@ -479,9 +479,8 @@
     }
 
     .env.is-open.is-modal .letter-inner{
+      overflow: visible;
       height: auto;
-      max-height: calc(90vh - 40px);
-      overflow: auto;
       padding: 20px 22px 18px;
     }
 
@@ -557,6 +556,14 @@
 
       .env.is-open.is-modal .letter{
         width: min(680px, 92vw);
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+      }
+
+      .env.is-open.is-modal .letter-inner{
+        max-height: calc(90vh - 32px);
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
 
       .env.is-open.is-modal .letter-inner{
