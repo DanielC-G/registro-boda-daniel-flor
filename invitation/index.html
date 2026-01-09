@@ -68,13 +68,12 @@
       content:"";
       position: fixed;
       inset: 0;
-      opacity: .38;              /* intensidad del arreglo floral */
+      opacity: .6;
       pointer-events:none;
-      opacity: .22; /* más visible pero elegante */
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%23C8A24A' stroke-opacity='.32' stroke-width='1.4'%3E%3Cpath d='M68 160c28-44 78-66 124-46 50 22 64 86 22 130-30 32-82 38-118 14-44-28-54-68-28-98z'/%3E%3Cpath d='M150 318c16-34 50-56 88-48 44 10 60 58 32 96-20 28-56 36-86 22-38-18-52-48-34-70z'/%3E%3Cpath d='M356 182c16-38 56-60 94-48 42 14 56 66 26 104-22 28-62 34-92 18-38-20-50-52-28-74z'/%3E%3Cpath d='M348 370c18-34 58-52 96-36 38 16 46 68 14 102-22 22-60 26-86 12-38-20-48-52-24-78z'/%3E%3Cpath d='M254 78c0 52-36 96-82 96S90 130 90 78s36-86 82-86 82 34 82 86z'/%3E%3Cpath d='M402 118c0 42-30 76-70 76s-70-32-70-76 30-66 70-66 70 28 70 66z'/%3E%3Cpath d='M236 444c0 42-30 76-70 76s-70-32-70-76 30-66 70-66 70 28 70 66z'/%3E%3Cpath d='M468 286c0 46-34 84-80 84s-80-36-80-84 34-74 80-74 80 32 80 74z'/%3E%3Cpath d='M84 376c0 46-34 84-80 84s-80-36-80-84 34-74 80-74 80 32 80 74z'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: 620px 620px;
-      background-position: center;
+      background-image: url("bg-roses.svg");
+      background-size: 900px 900px;
+      background-position: 0 0;
+      background-repeat: repeat;
       filter: blur(.2px);
     }
 
@@ -162,23 +161,6 @@
       pointer-events:none;
     }
 
-    /* Ornamentos de esquina (dentro de la tarjeta, pero discretos) */
-    .card::after{
-      content:"";
-      position:absolute;
-      inset: 0;
-      pointer-events:none;
-      opacity: .55;
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23C8A24A' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M22 66c34-34 78-44 124-34'/%3E%3Cpath d='M22 66c26 2 44 22 46 50'/%3E%3Cpath d='M68 116c22-8 40-4 50 18'/%3E%3Cpath d='M218 174c-34 34-78 44-124 34'/%3E%3Cpath d='M218 174c-26-2-44-22-46-50'/%3E%3Cpath d='M172 124c-22 8-40 4-50-18'/%3E%3C/g%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position:
-        14px 14px,
-        calc(100% - 254px) calc(100% - 254px);
-      background-size: 240px 240px;
-      filter: drop-shadow(0 10px 18px rgba(31,31,31,.06));
-    }
-
     .cardhead{
       display:flex;
       align-items:flex-start;
@@ -240,8 +222,8 @@
 
     /* Envelope */
     .env{
-      width: min(640px, 100%);
-      aspect-ratio: 16 / 10;
+      width: min(704px, 100%);
+      aspect-ratio: 16 / 11;
       position: relative;
       perspective: 1200px;
       border-radius: 22px;
@@ -259,6 +241,15 @@
       box-shadow: var(--shadow);
       overflow:hidden;
       z-index: 1;
+    }
+
+    .env-clip::before{
+      content:"";
+      position:absolute;
+      inset: 6px;
+      border-radius: 16px;
+      border: 1px solid rgba(200,162,74,.55);
+      pointer-events:none;
     }
 
     .env-clip::after{
@@ -317,6 +308,16 @@
       border-top-right-radius: 18px;
       border: 1px solid rgba(200,162,74,.25);
       border-bottom: none;
+    }
+    .flap::after{
+      content:"";
+      position:absolute;
+      inset: 6px 10px 8px;
+      border-radius: 14px 14px 0 0;
+      border: 1px solid rgba(200,162,74,.55);
+      border-bottom: none;
+      clip-path: polygon(0% 0%, 100% 0%, 50% 76%);
+      pointer-events:none;
     }
 
     /* LETTER */
