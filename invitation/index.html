@@ -224,6 +224,7 @@
     .env{
       width: min(704px, 100%);
       aspect-ratio: 16 / 11;
+      aspect-ratio: 16 / 10;
       position: relative;
       perspective: 1200px;
       border-radius: 22px;
@@ -264,23 +265,7 @@
 
     /* FOLDS */
     .fold-left, .fold-right, .fold-bottom{
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-    }
-    .fold-left{
-      background: var(--env2);
-      opacity:.95;
-      clip-path: polygon(0% 100%, 0% 28%, 52% 70%);
-    }
-    .fold-right{
-      background: var(--env2);
-      opacity:.95;
-      clip-path: polygon(100% 100%, 100% 28%, 48% 70%);
-    }
-    .fold-bottom{
-      background: linear-gradient(180deg, rgba(0,0,0,0), rgba(31,31,31,.05));
-      clip-path: polygon(0% 100%, 50% 70%, 100% 100%, 0% 100%);
+      display: none;
     }
 
     /* FLAP */
@@ -548,10 +533,6 @@
         <div class="stage">
           <div id="envelope" class="env" role="button" tabindex="0" aria-label="Abrir o cerrar el sobre" aria-pressed="false">
             <div class="env-clip" aria-hidden="false">
-              <div class="fold-left"></div>
-              <div class="fold-right"></div>
-              <div class="fold-bottom"></div>
-
               <article class="letter" aria-label="Carta de invitación">
                 <div class="seal" aria-hidden="true">D&amp;F</div>
 
