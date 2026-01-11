@@ -30,7 +30,7 @@ export const WEDDING_CONFIG = {
       a: 'A elección personal, recuerda que el evento es en primavera.'
     },
     {
-      q: '¿Puedo llevar acompañante?',
+      q: '¿Puedo llevar acompañantes?',
       a: 'Si, deberás ingresar sus nombres en el registro de asistencia, registrate al menos 2 meses antes del día del evento.'
     },
     {
