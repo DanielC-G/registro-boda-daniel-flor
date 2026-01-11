@@ -129,11 +129,11 @@ footer{
 
 @media (max-width: 600px){
   .wrap{
-    padding: 26px 14px 40px;
+    padding: 22px 14px 48px;
   }
 
   .card{
-    padding: 16px;
+    padding: 12px 14px 16px;
   }
 
   .cardhead{
@@ -143,6 +143,10 @@ footer{
   }
 
   .stage{
-    padding: 10px 0 6px;
+    padding: 8px 0 6px;
+  }
+
+  body.is-open .wrap{
+    padding-bottom: 120px;
   }
 }

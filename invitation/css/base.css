@@ -19,12 +19,13 @@ body::before{
   position: fixed;
   inset: 0;
   z-index: -2;
-  opacity: .15;
+  opacity: .26;
   pointer-events:none;
   background-image: url("../bg-roses.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: contrast(1.05) saturate(1.05);
 }
 
 /* Overlay blanco muy sutil para que el fondo nunca compita con el contenido */
