@@ -4,6 +4,13 @@ export function initCalendarDownload() {
   const calendarBtn = document.getElementById('addToCalendar');
   const { calendar: calendarEvent } = WEDDING_CONFIG;
 
+  function escapeICSText(value) {
+    return String(value)
+      .replace(/\r?\n/g, '\\n')
+      .replace(/,/g, '\\,')
+      .replace(/;/g, '\\;');
+  }
+
   function buildICS({ title, description, location, start, end }) {
     return [
       'BEGIN:VCALENDAR',
@@ -16,12 +23,12 @@ export function initCalendarDownload() {
       `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z`,
       `DTSTART:${start}`,
       `DTEND:${end}`,
-      `SUMMARY:${title}`,
-      `DESCRIPTION:${description}`,
-      `LOCATION:${location}`,
+      `SUMMARY:${escapeICSText(title)}`,
+      `DESCRIPTION:${escapeICSText(description)}`,
+      `LOCATION:${escapeICSText(location)}`,
       'END:VEVENT',
       'END:VCALENDAR'
-    ].join('\r\n');
+    ].join('\r\n') + '\r\n';
   }
 
   calendarBtn.addEventListener('click', () => {
