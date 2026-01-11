@@ -1,0 +1,58 @@
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
+  color:var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height:1.6;
+  background:
+    radial-gradient(1000px 700px at 10% 110%, rgba(31,31,31,.04), transparent 55%),
+    var(--bg);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Fondo fondo: arreglos dorados (sutiles) detrás de TODO, incluyendo el título */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  opacity: .45;
+  pointer-events:none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23c8a24a' stroke-opacity='0.18' stroke-width='1.2'%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='180' cy='70' r='24'/%3E%3Ccircle cx='130' cy='170' r='26'/%3E%3Cpath d='M36 120c16 10 36 10 52 0M144 124c16 10 36 10 52 0'/%3E%3Cpath d='M72 184c14 10 32 10 46 0'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  background-position: center;
+  background-repeat: repeat;
+  filter: blur(.2px);
+}
+
+/* Overlay blanco muy sutil para que el fondo nunca compita con el contenido */
+body::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  position: fixed;
+  inset: 0;
+  pointer-events:none;
+  background: rgba(255,255,255,.70);
+  z-index: 0;
+}
+
+:focus-visible{
+  outline: 3px solid rgba(200,162,74,.7);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+.env:focus-visible{
+  outline: 3px solid rgba(200,162,74,.8);
+  outline-offset: 6px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .flap, .letter, .btn, .letter-inner { transition: none !important; }
+  .env{ perspective: none; }
+  .env.is-open .flap{ transform: none; }
+}
