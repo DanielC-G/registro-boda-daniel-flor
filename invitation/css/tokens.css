@@ -14,4 +14,8 @@
   --shadow2: 0 12px 32px rgba(30,29,27,.10);
 
   --radius: 20px;
+
+  --env-max-w: 680px;
+  --env-h-mobile: clamp(320px, 46vh, 520px);
+  --env-h-desktop: clamp(360px, 38vh, 560px);
 }
