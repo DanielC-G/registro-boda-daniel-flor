@@ -1,0 +1,17 @@
+:root{
+  --bg: #fbfaf8;
+  --text: #1e1d1b;
+  --muted: #5f5a55;
+  --gold: #c8a24a;
+  --card: #ffffff;
+  --border: rgba(30,29,27,.14);
+
+  --env: #f3efe7;
+  --env2: #ece6da;
+  --paper: #ffffff;
+
+  --shadow: 0 24px 70px rgba(30,29,27,.12);
+  --shadow2: 0 12px 32px rgba(30,29,27,.10);
+
+  --radius: 20px;
+}

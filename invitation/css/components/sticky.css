@@ -1,0 +1,24 @@
+.sticky-rsvp{
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 20;
+  display: none;
+  justify-content: center;
+  pointer-events: none;
+}
+.sticky-rsvp a{
+  width: 100%;
+  max-width: 420px;
+  pointer-events: auto;
+  justify-content: center;
+  padding: 14px 18px;
+  border-radius: 999px;
+}
+
+@media (max-width: 600px){
+  body.is-open .sticky-rsvp{
+    display: flex;
+  }
+}
