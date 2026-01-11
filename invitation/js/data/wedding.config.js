@@ -31,11 +31,11 @@ export const WEDDING_CONFIG = {
     },
     {
       q: '¿Puedo llevar acompañante?',
-      a: 'Si, deberás agregar sus nombres en el registro de sistencia.'
+      a: 'Si, deberás agregar sus nombres en el registro de asistencia.'
     },
     {
       q: '¿Habrá estacionamiento en el lugar?',
-      a: 'Sí, en via publica para la misa nupcial. El salón de la recepción cuentan con estacionamiento disponible.'
+      a: 'Sí, en vía pública para la misa nupcial. El salón de la recepción cuenta con estacionamiento disponible.'
     }
   ],
   calendar: {
