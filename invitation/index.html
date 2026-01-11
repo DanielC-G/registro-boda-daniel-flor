@@ -406,6 +406,19 @@
       border-bottom: 1px solid rgba(200,162,74,.65);
     }
     .mini a:hover{ border-bottom-color: rgba(200,162,74,1); }
+    .map-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(200,162,74,.45);
+    }
+    .map-link:hover{
+      color: var(--text);
+      border-bottom-color: rgba(200,162,74,.75);
+    }
 
     .cta-row{
       margin-top: 18px;
@@ -414,6 +427,39 @@
       gap: 12px;
       align-items:center;
       justify-content:flex-start;
+    }
+    .cta-primary{
+      width: 100%;
+      justify-content: center;
+      padding: 16px 20px;
+      font-size: 16px;
+      border-radius: 16px;
+    }
+    .cta-primary span{
+      font-weight: 600;
+    }
+    .cta-support{
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .sticky-rsvp{
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 20;
+      display: none;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .sticky-rsvp a{
+      width: 100%;
+      max-width: 420px;
+      pointer-events: auto;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 999px;
     }
 
     .hint{
@@ -505,6 +551,10 @@
       .env.is-open .letter{
         transform: translateX(-50%) translateY(-10%);
       }
+
+      body.is-open .sticky-rsvp{
+        display: flex;
+      }
     }
 
     :focus-visible{
@@ -562,29 +612,31 @@
                     <div class="mini">
                       <strong>Misa Nupcial</strong>
                       Iglesia de la Virgen de Guadalupe<br/>
-                      <a target="_blank" rel="noopener"
+                      <span class="muted">5a Aldama, Centro, CP 91500, Coatepec, Veracruz</span>
+                      <a class="map-link" target="_blank" rel="noopener"
                          href="https://www.google.com/maps/search/?api=1&query=Iglesia%20de%20la%20Virgen%20de%20Guadalupe%2C%205a%20Aldama%2C%20Centro%2C%20Coatepec%2C%20Veracruz">
-                        5a Aldama, Centro, CP 91500, Coatepec, Veracruz
+                        Abrir en Google Maps
                       </a>
                     </div>
 
                     <div class="mini">
                       <strong>Recepción</strong>
                       Salón Campestre Los Encinos<br/>
-                      <a target="_blank" rel="noopener"
+                      <span class="muted">Camino a Micoxtla, pasando el panteón, Centro, CP 91240, Xico, Veracruz</span>
+                      <a class="map-link" target="_blank" rel="noopener"
                          href="https://www.google.com/maps/search/?api=1&query=Salon%20Campestre%20Los%20Encinos%2C%20Camino%20a%20Micoxtla%2C%20Xico%2C%20Veracruz">
-                        Camino a Micoxtla, pasando el panteón, Centro, CP 91240, Xico, Veracruz
+                        Abrir en Google Maps
                       </a>
                     </div>
                   </div>
 
                   <div class="cta-row">
-                    <a class="btn primary"
+                    <a class="btn primary cta-primary"
                        href="https://danielc-g.github.io/registro-boda-daniel-flor/"
                        target="_blank" rel="noopener">
-                      Registro de invitados
+                      Confirmar asistencia
                     </a>
-                    <span class="muted" style="font-size:13px;">
+                    <span class="cta-support">
                       Confirmación y datos únicamente en el registro.
                     </span>
                   </div>
@@ -604,6 +656,13 @@
     </div>
   </div>
 
+  <div class="sticky-rsvp">
+    <a class="btn primary"
+       href="https://danielc-g.github.io/registro-boda-daniel-flor/"
+       target="_blank" rel="noopener">
+      Confirmar asistencia
+    </a>
+  </div>
   <script>
     (function(){
       const env = document.getElementById('envelope');
@@ -611,6 +670,7 @@
 
       function setState(open){
         env.classList.toggle('is-open', open);
+        document.body.classList.toggle('is-open', open);
         env.setAttribute('aria-pressed', String(open));
         toggleBtn.setAttribute('aria-expanded', String(open));
       }
