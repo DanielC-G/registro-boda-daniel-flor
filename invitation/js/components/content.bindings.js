@@ -57,11 +57,12 @@ export function bindContentFromConfig() {
       const label = document.createElement('strong');
       label.textContent = event.label;
 
-      const venue = document.createTextNode(event.venue);
-      const lineBreak = document.createElement('br');
+      const venue = document.createElement('div');
+      venue.className = 'venue';
+      venue.textContent = event.venue;
 
-      const address = document.createElement('span');
-      address.className = 'muted';
+      const address = document.createElement('div');
+      address.className = 'muted address';
       address.textContent = event.address;
 
       const link = document.createElement('a');
@@ -71,7 +72,7 @@ export function bindContentFromConfig() {
       link.href = event.mapsUrl;
       link.textContent = 'Abrir en Google Maps';
 
-      mini.append(label, venue, lineBreak, address, link);
+      mini.append(label, venue, address, link);
       grid.appendChild(mini);
     });
   }
