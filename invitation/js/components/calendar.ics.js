@@ -1,13 +1,8 @@
+import { WEDDING_CONFIG } from '../data/wedding.config.js';
+
 export function initCalendarDownload() {
   const calendarBtn = document.getElementById('addToCalendar');
-
-  const calendarEvent = {
-    title: 'Boda de Daniel & Flor',
-    description: 'Ceremonia y recepción — Confirmación únicamente en el registro.',
-    location: 'Coatepec / Xico, Veracruz',
-    start: '20260530T120000',
-    end: '20260530T150000'
-  };
+  const { calendar: calendarEvent } = WEDDING_CONFIG;
 
   function buildICS({ title, description, location, start, end }) {
     return [
@@ -35,7 +30,7 @@ export function initCalendarDownload() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'boda-daniel-flor.ics';
+    link.download = calendarEvent.filename;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
