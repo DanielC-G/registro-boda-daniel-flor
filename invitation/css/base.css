@@ -18,26 +18,23 @@ body::before{
   content:"";
   position: fixed;
   inset: 0;
-  opacity: .45;
+  z-index: -2;
+  opacity: .15;
   pointer-events:none;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23c8a24a' stroke-opacity='0.18' stroke-width='1.2'%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='180' cy='70' r='24'/%3E%3Ccircle cx='130' cy='170' r='26'/%3E%3Cpath d='M36 120c16 10 36 10 52 0M144 124c16 10 36 10 52 0'/%3E%3Cpath d='M72 184c14 10 32 10 46 0'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 240px 240px;
+  background-image: url("../bg-roses.svg");
+  background-size: cover;
   background-position: center;
-  background-repeat: repeat;
-  filter: blur(.2px);
+  background-repeat: no-repeat;
 }
 
 /* Overlay blanco muy sutil para que el fondo nunca compita con el contenido */
 body::after{
   content:"";
-  position:absolute;
-  inset:0;
   position: fixed;
   inset: 0;
   pointer-events:none;
   background: rgba(255,255,255,.70);
-  z-index: 0;
+  z-index: -1;
 }
 
 :focus-visible{
