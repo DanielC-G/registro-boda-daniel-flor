@@ -31,7 +31,7 @@ export const WEDDING_CONFIG = {
     },
     {
       q: '¿Puedo llevar acompañante?',
-      a: 'Si, deberás agregar sus nombres en el registro de asistencia.'
+      a: 'Si, deberás ingresar sus nombres en el registro de asistencia, registrate al menos 2 meses antes del día del evento.'
     },
     {
       q: '¿Habrá estacionamiento en el lugar?',
@@ -43,7 +43,7 @@ export const WEDDING_CONFIG = {
     description: 'Ceremonia y recepción — Confirmación únicamente en el registro.',
     location: 'Coatepec / Xico, Veracruz',
     start: '20260530T120000',
-    end: '20260530T150000',
+    end: '20260530T220000',
     filename: 'boda-daniel-flor.ics'
   }
 };
