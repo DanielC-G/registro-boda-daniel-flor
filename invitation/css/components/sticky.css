@@ -17,8 +17,32 @@
   border-radius: 999px;
 }
 
-@media (max-width: 600px){
-  body.is-open .sticky-rsvp{
-    display: flex;
+body.is-open .sticky-rsvp{
+  display: flex;
+}
+
+@media (max-width: 640px){
+  .sticky-rsvp{
+    bottom: calc(16px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (min-width: 641px){
+  .sticky-rsvp{
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    margin-top: 16px;
+    justify-content: center;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .sticky-rsvp a{
+    min-width: 280px;
+    width: auto;
   }
 }
