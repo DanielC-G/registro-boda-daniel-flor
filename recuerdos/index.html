@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Álbum de recuerdos | Daniel &amp; Flor</title>
+  <meta name="description" content="Sube tus fotos y videos al álbum compartido de Daniel y Flor." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="titulo-recuerdos">
+      <p class="kicker">Daniel &amp; Flor</p>
+      <h1 id="titulo-recuerdos">Álbum de recuerdos</h1>
+      <p class="lead">Ayúdanos a guardar cada sonrisa, abrazo y momento especial de nuestra boda.</p>
+
+      <a id="uploadBtn" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">
+        Subir fotos al álbum
+      </a>
+
+      <ol class="steps" aria-label="Instrucciones para subir fotos">
+        <li>Toca el botón para abrir el álbum.</li>
+        <li>Únete al álbum si Google Photos lo solicita.</li>
+        <li>Pulsa “Agregar fotos”.</li>
+        <li>Selecciona tus mejores fotos o videos.</li>
+        <li>Gracias por compartir tus recuerdos.</li>
+      </ol>
+
+      <p class="privacy">Al subir fotos al álbum compartido, otros invitados con acceso al enlace podrían verlas.</p>
+
+      <button id="fallbackBtn" class="btn btn-secondary" type="button">No puedo subir fotos</button>
+      <p id="fallbackMsg" class="fallback-msg" role="status" aria-live="polite" hidden>
+        Si no puedes subirlas en este momento, envíalas por WhatsApp a Daniel o Flor para agregarlas al álbum.
+      </p>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
