@@ -1,4 +1,4 @@
-const GOOGLE_PHOTOS_ALBUM_URL = "PEGAR_AQUI_URL_DEL_ALBUM";
+const GOOGLE_PHOTOS_ALBUM_URL = "https://photos.app.goo.gl/a94B41FsT4v5t8Q17";
 const WHATSAPP_FALLBACK_URL = "https://wa.me/";
 
 const uploadBtn = document.getElementById("uploadBtn");
